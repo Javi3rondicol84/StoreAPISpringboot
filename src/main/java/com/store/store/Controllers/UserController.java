@@ -1,5 +1,6 @@
 package com.store.store.Controllers;
 
+import java.util.HashSet;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import com.store.Helpers.HttpHelper;
 import com.store.store.Entities.User;
 import com.store.store.Repositories.UserRepository;
 
+
 @RestController
 public class UserController {
     
@@ -24,8 +26,11 @@ public class UserController {
     private UserRepository userRepository;
     private HttpHelper httpHelper;
 
+    private HashSet<String> usernames;
+
     public UserController() {
         this.httpHelper = new HttpHelper();
+        this.usernames = new HashSet<>();
     }
 
     @GetMapping(value = {"/users/", "/users"})
@@ -50,7 +55,8 @@ public class UserController {
             userExists = this.usernameAlreadyExists(userName);
         
             if(!userExists) {
-            this.userRepository.save(user);
+                this.userRepository.save(user);
+                this.usernames.add(userName);
             }
             else {
                 return ResponseEntity.status(HttpStatus.CONFLICT).body("El nombre de usuario ya existe");
@@ -101,17 +107,7 @@ public class UserController {
     }
 
     private boolean usernameAlreadyExists(String username) {
-        List<User> users = this.userRepository.findAll();
-
-        //poner hashmap
-        for(int i = 0; i < users.size(); i++) {
-            if(users.get(i).getUserName().equals(username)) {
-                return true;
-            }
-        }
-
-        
-        return false;
+        return this.usernames.contains(username);
     }
 
 

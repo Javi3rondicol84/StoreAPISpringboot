@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.store.Helpers.HttpHelper;
@@ -79,15 +80,22 @@ public class ProductController {
         return this.httpHelper.getDeleteResponse(product, id);
     }
 
-    //filtros
+    //filters
+    @GetMapping("/products/filterByCategory")
+    //get by category
+    public ResponseEntity<?> getProductByCategory(@RequestParam String category) {
+        List<Product> products = this.productRepository.findByCategory(category);
 
-    @GetMapping("/products/{category}")
-    public ResponseEntity<?> getProductByCategory(@PathVariable String category) {
-        //Product product = this.productRepository.findById().orElse(null);
-      
-        return null;
-        //return this.httpHelper.getItemByIdResponse(product, id);
+        return this.httpHelper.getItemsByCategoryResponse(products, category);
     }
-    
+    //get by price
+    @GetMapping("/products/filterByPrice")
+    public ResponseEntity<?> getProductByPrice(@RequestParam Double price) {
+
+        List<Product> products = this.productRepository.findByPrice(price);
+
+        return this.httpHelper.getItemsByPriceResponse(products, price);
+
+    }
 
 }

@@ -61,4 +61,25 @@ public class HttpHelper {
         }
     }
 
+    public ResponseEntity<?> getItemsByCategoryResponse(List<? extends Item> items, String category) {
+
+        if(items == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo encontrar items con la categoria: "+category);
+        }
+        else {
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(items);
+        }
+    }
+
+    public ResponseEntity<?> getItemsByPriceResponse(List<? extends Item> items, Double price) {
+
+        if(items == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo encontrar items con el precio: "+price);
+        }
+        else {
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(items);
+        }
+
+    }
+
 }

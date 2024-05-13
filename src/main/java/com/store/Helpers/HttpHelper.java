@@ -37,4 +37,28 @@ public class HttpHelper {
         
     }
 
+    public ResponseEntity<?> getPutResponse(Item item, Long id) {
+
+        if(item == null) {
+           return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El item en el id: "+id+" no se pudo actualizar");
+        }
+        else if(id == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El Id no existe");
+        }
+        else {
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body("El item se actualizó correctamente");
+        }
+    
+    }
+
+    public ResponseEntity<?> getDeleteResponse(Item item, Long id) {
+
+        if(item == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo eliminar el item en el id: "+id);
+        }
+        else {
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body("El item con el id: "+id+" se eliminó correctamente");
+        }
+    }
+
 }

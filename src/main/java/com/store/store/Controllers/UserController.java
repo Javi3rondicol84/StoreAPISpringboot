@@ -85,6 +85,7 @@ public class UserController {
                 oldUser.setPassword(newUser.getPassword());
 
                 this.userRepository.save(oldUser);
+                //ACTUALIZAR hashset this.usernames.
             }
             else {
                 return ResponseEntity.status(HttpStatus.CONFLICT).body("El nombre de usuario ya existe");

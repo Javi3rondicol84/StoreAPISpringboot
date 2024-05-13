@@ -1,22 +1,20 @@
 package com.store.store.Entities;
 
-import org.springframework.data.annotation.Id;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 
 
 @Entity
-public class User {
+public class User extends Item {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    @Column(unique = true)
     private String userName;
 
     private String email;

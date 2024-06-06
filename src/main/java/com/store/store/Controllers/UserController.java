@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.store.Helpers.HttpHelper;
-import com.store.store.Entities.User;
+import com.store.store.Entities.ClientUser;
+import com.store.store.Helpers.HttpHelper;
 import com.store.store.Repositories.UserRepository;
 
 
@@ -35,20 +35,20 @@ public class UserController {
 
     @GetMapping(value = {"/users/", "/users"})
     public ResponseEntity<?> getAllUsers() {
-        List<User> users = this.userRepository.findAll();
+        List<ClientUser> users = this.userRepository.findAll();
 
         return this.httpHelper.getAllItemsResponse(users);
     }
 
     @GetMapping("/users/{id}")
     public ResponseEntity<?> getUserById(@PathVariable Long id) {
-        User user = this.userRepository.findById(id).orElse(null);
+        ClientUser user = this.userRepository.findById(id).orElse(null);
 
         return this.httpHelper.getItemByIdResponse(user, id);
     }
 
     @PostMapping(value = {"/users/add", "/users/add/"})
-    public ResponseEntity<?> createUser(@RequestBody User user) {
+    public ResponseEntity<?> createUser(@RequestBody ClientUser user) {
         boolean userExists = false;
         if(user != null) {
             String userName = user.getUserName();
@@ -68,10 +68,10 @@ public class UserController {
     }
 
     @PutMapping("/users/update/{id}")
-    public ResponseEntity<?> updateUpdate(@RequestBody User newUser, @PathVariable Long id) {
+    public ResponseEntity<?> updateUpdate(@RequestBody ClientUser newUser, @PathVariable Long id) {
 
         //corregir tema id
-        User oldUser = this.userRepository.findById(id).orElse(null);
+        ClientUser oldUser = this.userRepository.findById(id).orElse(null);
         boolean userExists = false;
         
         if(oldUser != null) {
@@ -98,7 +98,7 @@ public class UserController {
 
     @DeleteMapping("/users/delete/{id}")
     public ResponseEntity<?> deleteCalendar(@PathVariable Long id) {
-        User user = this.userRepository.findById(id).orElse(null);
+        ClientUser user = this.userRepository.findById(id).orElse(null);
 
         if(user != null) {
             this.userRepository.delete(user);

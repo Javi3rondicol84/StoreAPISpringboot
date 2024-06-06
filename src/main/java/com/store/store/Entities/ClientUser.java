@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 
 
 @Entity
-public class User extends Item {
+public class ClientUser extends Item {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

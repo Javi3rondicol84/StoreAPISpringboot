@@ -1,4 +1,4 @@
-package com.store.Helpers;
+package com.store.store.Helpers;
 
 import java.util.List;
 

@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.store.Helpers.HttpHelper;
 import com.store.store.Entities.User;
+import com.store.store.Helpers.HttpHelper;
 import com.store.store.Repositories.UserRepository;
 
 

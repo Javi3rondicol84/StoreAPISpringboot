@@ -9,6 +9,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -22,6 +23,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -33,15 +35,8 @@ public class SecurityConfig {
     )  throws Exception {
         return httpSecurity
         .csrf(crsf -> crsf.disable()) 
+        .httpBasic(Customizer.withDefaults())
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-        .authorizeHttpRequests(http -> {
-            http.requestMatchers(HttpMethod.GET, "/auth/hello").permitAll();
-            http.requestMatchers(HttpMethod.GET, "/auth/hello-secured").hasAuthority("READ");
-
-            http.anyRequest().denyAll();
-            http.anyRequest().authenticated();
-        })
-        
         .build();
         
     }

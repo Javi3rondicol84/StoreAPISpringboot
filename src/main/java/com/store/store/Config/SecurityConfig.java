@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -33,9 +34,12 @@ public class SecurityConfig {
         return httpSecurity
         .csrf(crsf -> crsf.disable()) 
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-        .authorizeHttpRequest(http -> {
-            http.requestMatchers(httpMethod.GET, "/auth/hello").permitAll();
-            http.requestMatchers(httpMethod.GET, "/auth/hello-secured").hasAuthority("READ");
+        .authorizeHttpRequests(http -> {
+            http.requestMatchers(HttpMethod.GET, "/auth/hello").permitAll();
+            http.requestMatchers(HttpMethod.GET, "/auth/hello-secured").hasAuthority("READ");
+
+            http.anyRequest().denyAll();
+            http.anyRequest().authenticated();
         })
         
         .build();

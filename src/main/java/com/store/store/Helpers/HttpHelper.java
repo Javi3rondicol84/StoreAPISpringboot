@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.store.store.Entities.Item;
+import com.store.store.Entities.ItemEntity;
 
 public class HttpHelper {
     
-    public ResponseEntity<?> getAllItemsResponse(List<? extends Item> items) {
+    public ResponseEntity<?> getAllItemsResponse(List<? extends ItemEntity> items) {
         if(items == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se pudo encontrar items");
         }
@@ -18,7 +18,7 @@ public class HttpHelper {
         }
     }
 
-    public ResponseEntity<?> getItemByIdResponse(Item item, Long id) {
+    public ResponseEntity<?> getItemByIdResponse(ItemEntity item, Long id) {
         if(item == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontró el item con el id: "+id);
         }
@@ -27,7 +27,7 @@ public class HttpHelper {
         }
     }
 
-    public ResponseEntity<?> getPostResponse(Item item) {
+    public ResponseEntity<?> getPostResponse(ItemEntity item) {
         if(item == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo añadir el nuevo item");
         }
@@ -37,7 +37,7 @@ public class HttpHelper {
         
     }
 
-    public ResponseEntity<?> getPutResponse(Item item, Long id) {
+    public ResponseEntity<?> getPutResponse(ItemEntity item, Long id) {
 
         if(item == null) {
            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El item en el id: "+id+" no se pudo actualizar");
@@ -51,7 +51,7 @@ public class HttpHelper {
     
     }
 
-    public ResponseEntity<?> getDeleteResponse(Item item, Long id) {
+    public ResponseEntity<?> getDeleteResponse(ItemEntity item, Long id) {
 
         if(item == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo eliminar el item en el id: "+id);
@@ -61,7 +61,7 @@ public class HttpHelper {
         }
     }
 
-    public ResponseEntity<?> getItemsByCategoryResponse(List<? extends Item> items, String category) {
+    public ResponseEntity<?> getItemsByCategoryResponse(List<? extends ItemEntity> items, String category) {
 
         if(items == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo encontrar items con la categoria: "+category);
@@ -71,7 +71,7 @@ public class HttpHelper {
         }
     }
 
-    public ResponseEntity<?> getItemsByPriceResponse(List<? extends Item> items, Double price) {
+    public ResponseEntity<?> getItemsByPriceResponse(List<? extends ItemEntity> items, Double price) {
 
         if(items == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo encontrar items con el precio: "+price);

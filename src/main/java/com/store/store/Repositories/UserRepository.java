@@ -1,9 +1,11 @@
 package com.store.store.Repositories;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.store.store.Entities.ClientUser;
+import com.store.store.Entities.Users.UserEntity;
 
-public interface UserRepository extends JpaRepository<ClientUser, Long>{
+public interface UserRepository extends JpaRepository<UserEntity, Long>{
     
+    public UserEntity findUserEntityByUserName(String userName);
 }

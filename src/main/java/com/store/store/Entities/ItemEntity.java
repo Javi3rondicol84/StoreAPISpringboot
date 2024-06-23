@@ -1,5 +1,5 @@
 package com.store.store.Entities;
 
-public abstract class Item {
+public abstract class ItemEntity {
     
 }

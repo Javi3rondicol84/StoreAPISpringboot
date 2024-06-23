@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.store.store.Entities.Product;
+import com.store.store.Entities.ProductEntity;
 
-public interface ProductRepository extends JpaRepository<Product, Long>{
+public interface ProductRepository extends JpaRepository<ProductEntity, Long>{
 
     @Query(value = "SELECT * FROM product WHERE category = ?1", nativeQuery = true)
-    List<Product> findByCategory(String category);
+    List<ProductEntity> findByCategory(String category);
 
     @Query(value = "SELECT * FROM product WHERE price = ?1", nativeQuery = true)
-    List<Product> findByPrice(Double price);
+    List<ProductEntity> findByPrice(Double price);
     
 }

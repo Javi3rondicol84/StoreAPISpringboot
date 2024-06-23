@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.store.store.Entities.Product;
+import com.store.store.Entities.ProductEntity;
 import com.store.store.Helpers.HttpHelper;
 import com.store.store.Repositories.ProductRepository;
 
@@ -30,20 +30,20 @@ public class ProductController {
     
     @GetMapping(value = {"/products/", "/products"})
     public ResponseEntity<?> getAllProducts() {
-        List<Product> products = this.productRepository.findAll();
+        List<ProductEntity> products = this.productRepository.findAll();
 
         return this.httpHelper.getAllItemsResponse(products);
     }
 
      @GetMapping("/products/{id}")
     public ResponseEntity<?> getProductById(@PathVariable Long id) {
-        Product product = this.productRepository.findById(id).orElse(null);
+        ProductEntity product = this.productRepository.findById(id).orElse(null);
 
         return this.httpHelper.getItemByIdResponse(product, id);
     }
 
     @PostMapping(value = {"/products/add", "/products/add/"})
-    public ResponseEntity<?> createProduct(@RequestBody Product product) {
+    public ResponseEntity<?> createProduct(@RequestBody ProductEntity product) {
         if(product != null) {
             this.productRepository.save(product);
         }
@@ -52,9 +52,9 @@ public class ProductController {
     }
 
     @PutMapping("/products/update/{id}")
-    public ResponseEntity<?> updateUpdate(@RequestBody Product newProduct, @PathVariable Long id) {
+    public ResponseEntity<?> updateUpdate(@RequestBody ProductEntity newProduct, @PathVariable Long id) {
 
-        Product oldProduct = this.productRepository.findById(id).orElse(null);
+        ProductEntity oldProduct = this.productRepository.findById(id).orElse(null);
         
         if(oldProduct != null) {
             oldProduct.setProductName(newProduct.getProductName());
@@ -71,7 +71,7 @@ public class ProductController {
     
     @DeleteMapping("/products/delete/{id}")
     public ResponseEntity<?> deleteCalendar(@PathVariable Long id) {
-        Product product = this.productRepository.findById(id).orElse(null);
+        ProductEntity product = this.productRepository.findById(id).orElse(null);
 
         if(product != null) {
             this.productRepository.delete(product);
@@ -84,7 +84,7 @@ public class ProductController {
     @GetMapping("/products/filterByCategory")
     //get by category
     public ResponseEntity<?> getProductByCategory(@RequestParam String category) {
-        List<Product> products = this.productRepository.findByCategory(category);
+        List<ProductEntity> products = this.productRepository.findByCategory(category);
 
         return this.httpHelper.getItemsByCategoryResponse(products, category);
     }
@@ -92,7 +92,7 @@ public class ProductController {
     @GetMapping("/products/filterByPrice")
     public ResponseEntity<?> getProductByPrice(@RequestParam Double price) {
 
-        List<Product> products = this.productRepository.findByPrice(price);
+        List<ProductEntity> products = this.productRepository.findByPrice(price);
 
         return this.httpHelper.getItemsByPriceResponse(products, price);
 

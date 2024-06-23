@@ -17,15 +17,15 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import lombok.Builder;
+
 
 @Table(name = "user_store")
-@Builder
 @Entity
 public class UserEntity extends ItemEntity {
     
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long userId;
     @Column(unique = true)
     private String userName;

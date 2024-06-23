@@ -23,11 +23,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import com.store.store.Entities.Users.UserDetailsServiceImpl;
+
 
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
+    private final UserDetailsServiceImpl userDetailsServiceImpl;
+
+    public SecurityConfig(UserDetailsServiceImpl userDetailsServiceImpl) {
+    this.userDetailsServiceImpl = userDetailsServiceImpl;
+    }
 
     //all filters modified HttpSecurity Object
     @Bean
@@ -50,7 +57,8 @@ public class SecurityConfig {
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setPasswordEncoder(this.passwordEncoder());
-        provider.setUserDetailsService(this.userDetailsService());
+        //provider.setUserDetailsService(this.userDetailsService());
+        provider.setUserDetailsService(userDetailsServiceImpl);
         return provider;
     }
 
@@ -58,24 +66,5 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
-
-    @Bean 
-    public UserDetailsService userDetailsService(){
-        List<UserDetails> userDetailsList = new ArrayList<UserDetails>();
-        userDetailsList.add(User.withUsername("santiago")
-        .password("1234")
-        .roles("ADMIN")
-        .authorities("READ", "CREATE")
-        .build());
-
-        userDetailsList.add(User.withUsername("daniel")
-        .password("1234")
-        .roles("USER")
-        .authorities("READ")
-        .build());
-
-        return new InMemoryUserDetailsManager(userDetailsList);
-    }
-
 
 }

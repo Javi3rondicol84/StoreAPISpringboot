@@ -11,28 +11,37 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.store.store.Repositories.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
+    private static final Logger logger = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserEntity userEntity = userRepository.findUserEntityByUserName(username);
 
-
-        //.orElseThrow(() -> new UsernameNotFoundException("El usuario "+username+ "no existe."));
+        if (userEntity == null) {
+            throw new UsernameNotFoundException("Usuario no encontrado");
+        }
 
         List<SimpleGrantedAuthority> authorityList = new ArrayList<>();
 
-        userEntity.getRoles()
-            .forEach(role -> authorityList.add(new SimpleGrantedAuthority("ROLE_".concat(role.getRoleEnum().name()))));
+      // Agregar roles como autoridades
+    for (RoleEntity role : userEntity.getRoles()) {
+        authorityList.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleEnum().name()));
 
-        userEntity.getRoles().stream()
-            .flatMap(role -> role.getPermissions().stream())
-                .forEach(permission -> authorityList.add(new SimpleGrantedAuthority(permission.getName())));
+        // Agregar permisos como autoridades
+        for (PermissionEntity permission : role.getPermissions()) {
+            authorityList.add(new SimpleGrantedAuthority(permission.getName()));
+        }
+    }
 
+        logger.debug("it works");
 
         return new User(userEntity.getUserName(), 
         userEntity.getPassword(), 

@@ -1,0 +1,76 @@
+2024-06-24T13:17:17.483-03:00  INFO 12092 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 12092 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
+2024-06-24T13:17:17.486-03:00  INFO 12092 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-06-24T13:17:17.559-03:00  INFO 12092 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-24T13:17:17.560-03:00  INFO 12092 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-24T13:17:18.698-03:00  INFO 12092 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-24T13:17:18.785-03:00  INFO 12092 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 2 JPA repository interfaces.
+2024-06-24T13:17:19.711-03:00  INFO 12092 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-24T13:17:19.732-03:00  INFO 12092 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-24T13:17:19.734-03:00  INFO 12092 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-24T13:17:19.802-03:00  INFO 12092 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-24T13:17:19.803-03:00  INFO 12092 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2242 ms
+2024-06-24T13:17:20.048-03:00  INFO 12092 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-24T13:17:20.172-03:00  INFO 12092 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-24T13:17:20.268-03:00  INFO 12092 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-24T13:17:20.650-03:00  INFO 12092 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-24T13:17:20.688-03:00  INFO 12092 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-24T13:17:20.879-03:00  INFO 12092 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@650fe518
+2024-06-24T13:17:20.882-03:00  INFO 12092 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-24T13:17:20.924-03:00  WARN 12092 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-06-24T13:17:20.958-03:00  WARN 12092 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-24T13:17:21.960-03:00  INFO 12092 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-24T13:17:23.108-03:00  INFO 12092 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-24T13:17:23.782-03:00  INFO 12092 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-24T13:17:23.902-03:00  WARN 12092 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-24T13:17:23.972-03:00  INFO 12092 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-24T13:17:23.974-03:00  WARN 12092 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-24T13:17:24.635-03:00  INFO 12092 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-24T13:17:24.672-03:00  INFO 12092 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-24T13:17:24.685-03:00  INFO 12092 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 7.942 seconds (process running for 8.538)
+2024-06-24T13:17:39.231-03:00  INFO 12092 --- [store] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-24T13:17:39.231-03:00  INFO 12092 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-24T13:17:39.235-03:00  INFO 12092 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-06-24T13:26:24.894-03:00  INFO 12332 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 12332 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
+2024-06-24T13:26:24.897-03:00  INFO 12332 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-06-24T13:26:24.988-03:00  INFO 12332 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-24T13:26:24.989-03:00  INFO 12332 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-24T13:26:25.910-03:00  INFO 12332 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-24T13:26:26.013-03:00  INFO 12332 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 2 JPA repository interfaces.
+2024-06-24T13:26:26.902-03:00  INFO 12332 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-24T13:26:26.924-03:00  INFO 12332 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-24T13:26:26.925-03:00  INFO 12332 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-06-24T13:26:26.992-03:00  INFO 12332 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-24T13:26:26.993-03:00  INFO 12332 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2003 ms
+2024-06-24T13:26:27.220-03:00  INFO 12332 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-24T13:26:27.301-03:00  INFO 12332 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-24T13:26:27.354-03:00  INFO 12332 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-24T13:26:27.699-03:00  INFO 12332 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-24T13:26:27.748-03:00  INFO 12332 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-24T13:26:27.931-03:00  INFO 12332 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@573548dc
+2024-06-24T13:26:27.934-03:00  INFO 12332 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-24T13:26:27.977-03:00  WARN 12332 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-06-24T13:26:27.996-03:00  WARN 12332 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-24T13:26:29.004-03:00  INFO 12332 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-24T13:26:30.500-03:00  INFO 12332 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-24T13:26:30.998-03:00  INFO 12332 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-24T13:26:31.108-03:00  WARN 12332 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-24T13:26:31.182-03:00  INFO 12332 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-24T13:26:31.184-03:00  WARN 12332 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-24T13:26:31.838-03:00  INFO 12332 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-24T13:26:31.891-03:00  INFO 12332 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-24T13:26:31.905-03:00  INFO 12332 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 7.586 seconds (process running for 8.1)
+2024-06-24T13:26:39.084-03:00  INFO 12332 --- [store] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-24T13:26:39.085-03:00  INFO 12332 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-24T13:26:39.088-03:00  INFO 12332 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-06-24T13:26:44.498-03:00 DEBUG 12332 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssCREATE
+2024-06-24T13:26:44.499-03:00 DEBUG 12332 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssDELETE
+2024-06-24T13:26:44.499-03:00 DEBUG 12332 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssREAD
+2024-06-24T13:26:44.500-03:00 DEBUG 12332 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssUPDATE
+2024-06-24T13:26:44.500-03:00 DEBUG 12332 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it works$2a$12$KqqIotOT4nH6dgoMM37Tje9UX109t5Yo.u/vSk3.YRPrSFKhCtRSG
+2024-06-24T13:26:48.940-03:00 DEBUG 12332 --- [store] [http-nio-8080-exec-4] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssREAD
+2024-06-24T13:26:48.941-03:00 DEBUG 12332 --- [store] [http-nio-8080-exec-4] c.s.s.E.Users.UserDetailsServiceImpl     : it works$2a$10$U0158xkw4VgQLS8OXmWLNuqqV3NStQ0ytJY4IGX7rYxcataeI.53q
+2024-06-24T13:26:53.423-03:00 DEBUG 12332 --- [store] [http-nio-8080-exec-5] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssCREATE
+2024-06-24T13:26:53.425-03:00 DEBUG 12332 --- [store] [http-nio-8080-exec-5] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssDELETE
+2024-06-24T13:26:53.425-03:00 DEBUG 12332 --- [store] [http-nio-8080-exec-5] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssUPDATE
+2024-06-24T13:26:53.426-03:00 DEBUG 12332 --- [store] [http-nio-8080-exec-5] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssREAD
+2024-06-24T13:26:53.426-03:00 DEBUG 12332 --- [store] [http-nio-8080-exec-5] c.s.s.E.Users.UserDetailsServiceImpl     : it works$2a$12$KqqIotOT4nH6dgoMM37Tje9UX109t5Yo.u/vSk3.YRPrSFKhCtRSG

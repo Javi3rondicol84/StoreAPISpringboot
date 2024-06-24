@@ -61,6 +61,10 @@ public class UserController {
             if(!userExists) {
              String encodedPassword = passwordEncoder.encode(user.getPassword());
                 user.setPassword(encodedPassword);
+                user.setAccountNoExpired(true);
+                user.setAccountNoLocked(true);
+                user.setCredentialNoExpired(true);
+                user.setEnabled(true);
                 this.userRepository.save(user);
                 this.usernames.add(userName);
             }

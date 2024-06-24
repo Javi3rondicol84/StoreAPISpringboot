@@ -43,14 +43,27 @@ public class SecurityConfig {
             //configurar endpoints publicos
             http.requestMatchers(HttpMethod.GET, "auth/hello").permitAll();
 
-            http.requestMatchers(HttpMethod.GET, "/users/").permitAll();
-
-            http.requestMatchers(HttpMethod.POST, "/users/add").permitAll();
-
-            http.requestMatchers(HttpMethod.POST, "/products/add").permitAll();
+            http.requestMatchers(HttpMethod.POST, "/users/add", "/users/add/").permitAll();
+            http.requestMatchers(HttpMethod.PUT, "/users/update/{$id}").permitAll();
+            http.requestMatchers(HttpMethod.DELETE, "/users/delete/{$id}").permitAll();
 
             //configurar endpoints privados
-            http.requestMatchers(HttpMethod.GET, "/auth/hello-secured").hasAnyRole("USER", "ADMIN");
+
+            //productos
+            http.requestMatchers(HttpMethod.GET, "/products/", "/products").hasAnyRole("ADMIN");
+            http.requestMatchers(HttpMethod.GET, "/products/{id}").hasAnyRole("ADMIN");
+            http.requestMatchers(HttpMethod.GET, "/products/filterByCategory").hasAnyRole("ADMIN");
+            http.requestMatchers(HttpMethod.GET, "/products/filterByPrice").hasAnyRole("ADMIN");
+            http.requestMatchers(HttpMethod.POST, "/products/add", "/products/add/").hasAnyRole("ADMIN");
+            http.requestMatchers(HttpMethod.PUT, "/products/update/{id}").hasAnyRole("ADMIN");
+            http.requestMatchers(HttpMethod.DELETE, "/products/delete/{id}").hasAnyRole("ADMIN");
+
+
+
+            //usuarios
+            http.requestMatchers(HttpMethod.GET, "/users/", "/users").hasAnyRole("ADMIN");
+            http.requestMatchers(HttpMethod.GET, "/users/$id").hasAnyRole("ADMIN");
+
 
             //denegar el resto
             http.anyRequest().denyAll();

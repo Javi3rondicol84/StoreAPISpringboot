@@ -32,7 +32,7 @@ public class SecurityConfig {
     }
 
     //all filters modified HttpSecurity Object
-   /* 
+   
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity
     )  throws Exception {
@@ -49,22 +49,13 @@ public class SecurityConfig {
             //configurar endpoints privados
             http.requestMatchers(HttpMethod.GET, "/auth/hello-secured").hasAnyRole("USER", "ADMIN");
 
-            //degenerar el resto
-           // http.anyRequest().denyAll();
+            //denegar el resto
+           http.anyRequest().denyAll();
         })
         .build();
     }
-*/
-     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity
-    )  throws Exception {
-        return httpSecurity
-        .csrf(crsf -> crsf.disable()) 
-        .httpBasic(Customizer.withDefaults())
-        .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-        .build();
-    }
 
+   
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {

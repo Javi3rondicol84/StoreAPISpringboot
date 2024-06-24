@@ -1161,3 +1161,47 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 2024-06-23T21:25:44.652-03:00 DEBUG 4840 --- [store] [http-nio-8080-exec-7] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssREAD
 2024-06-23T21:25:44.653-03:00 DEBUG 4840 --- [store] [http-nio-8080-exec-7] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssCREATE
 2024-06-23T21:25:44.654-03:00 DEBUG 4840 --- [store] [http-nio-8080-exec-7] c.s.s.E.Users.UserDetailsServiceImpl     : it works1234
+2024-06-23T21:44:55.009-03:00  INFO 21860 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 21860 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
+2024-06-23T21:44:55.012-03:00  INFO 21860 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-06-23T21:44:55.074-03:00  INFO 21860 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-23T21:44:55.075-03:00  INFO 21860 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-23T21:44:55.902-03:00  INFO 21860 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-23T21:44:55.979-03:00  INFO 21860 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 2 JPA repository interfaces.
+2024-06-23T21:44:56.793-03:00  INFO 21860 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-23T21:44:56.814-03:00  INFO 21860 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-23T21:44:56.814-03:00  INFO 21860 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-23T21:44:56.882-03:00  INFO 21860 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-23T21:44:56.883-03:00  INFO 21860 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1806 ms
+2024-06-23T21:44:57.087-03:00  INFO 21860 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-23T21:44:57.160-03:00  INFO 21860 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.8.Final
+2024-06-23T21:44:57.210-03:00  INFO 21860 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-23T21:44:57.498-03:00  INFO 21860 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-23T21:44:57.531-03:00  INFO 21860 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-23T21:44:57.689-03:00  INFO 21860 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b557858
+2024-06-23T21:44:57.692-03:00  INFO 21860 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-23T21:44:57.732-03:00  WARN 21860 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-06-23T21:44:57.760-03:00  WARN 21860 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-23T21:44:58.719-03:00  INFO 21860 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-23T21:45:00.557-03:00  INFO 21860 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-23T21:45:00.927-03:00  INFO 21860 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-23T21:45:01.016-03:00  WARN 21860 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-23T21:45:01.375-03:00  INFO 21860 --- [store] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6f57c791, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2375dcd2, org.springframework.security.web.context.SecurityContextHolderFilter@5ce62ada, org.springframework.security.web.header.HeaderWriterFilter@24bc7cd9, org.springframework.web.filter.CorsFilter@6eb42fab, org.springframework.security.web.authentication.logout.LogoutFilter@50d85384, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5667d170, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14e3fc3a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@758a31a9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7229091d, org.springframework.security.web.session.SessionManagementFilter@9bd3eb0, org.springframework.security.web.access.ExceptionTranslationFilter@1c0773c9]
+2024-06-23T21:45:01.628-03:00  INFO 21860 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-23T21:45:01.666-03:00  INFO 21860 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-06-23T21:45:01.674-03:00  INFO 21860 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 7.172 seconds (process running for 7.604)
+2024-06-23T21:45:05.447-03:00  INFO 21860 --- [store] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-23T21:45:05.448-03:00  INFO 21860 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-23T21:45:05.450-03:00  INFO 21860 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-23T21:45:05.674-03:00 DEBUG 21860 --- [store] [http-nio-8080-exec-2] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssUPDATE
+2024-06-23T21:45:05.675-03:00 DEBUG 21860 --- [store] [http-nio-8080-exec-2] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssREAD
+2024-06-23T21:45:05.675-03:00 DEBUG 21860 --- [store] [http-nio-8080-exec-2] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssDELETE
+2024-06-23T21:45:05.675-03:00 DEBUG 21860 --- [store] [http-nio-8080-exec-2] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssCREATE
+2024-06-23T21:45:05.675-03:00 DEBUG 21860 --- [store] [http-nio-8080-exec-2] c.s.s.E.Users.UserDetailsServiceImpl     : it works12345
+2024-06-23T21:45:12.754-03:00 DEBUG 21860 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssREAD
+2024-06-23T21:45:12.755-03:00 DEBUG 21860 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssUPDATE
+2024-06-23T21:45:12.756-03:00 DEBUG 21860 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssDELETE
+2024-06-23T21:45:12.756-03:00 DEBUG 21860 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssCREATE
+2024-06-23T21:45:12.756-03:00 DEBUG 21860 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it works12345
+2024-06-23T21:45:17.266-03:00 DEBUG 21860 --- [store] [http-nio-8080-exec-6] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssREAD
+2024-06-23T21:45:17.267-03:00 DEBUG 21860 --- [store] [http-nio-8080-exec-6] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssCREATE
+2024-06-23T21:45:17.267-03:00 DEBUG 21860 --- [store] [http-nio-8080-exec-6] c.s.s.E.Users.UserDetailsServiceImpl     : it works1234

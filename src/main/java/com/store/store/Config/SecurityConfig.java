@@ -1,7 +1,5 @@
 package com.store.store.Config;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,12 +13,9 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import com.store.store.Entities.Users.UserDetailsServiceImpl;
@@ -37,6 +32,7 @@ public class SecurityConfig {
     }
 
     //all filters modified HttpSecurity Object
+   /* 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity
     )  throws Exception {
@@ -44,9 +40,31 @@ public class SecurityConfig {
         .csrf(crsf -> crsf.disable()) 
         .httpBasic(Customizer.withDefaults())
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        .authorizeHttpRequests(http -> {
+            //configurar endpoints publicos
+            http.requestMatchers(HttpMethod.GET, "auth/hello").permitAll();
+
+            http.requestMatchers(HttpMethod.GET, "/users/").permitAll();
+
+            //configurar endpoints privados
+            http.requestMatchers(HttpMethod.GET, "/auth/hello-secured").hasAnyRole("USER", "ADMIN");
+
+            //degenerar el resto
+           // http.anyRequest().denyAll();
+        })
         .build();
-        
     }
+*/
+     @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity
+    )  throws Exception {
+        return httpSecurity
+        .csrf(crsf -> crsf.disable()) 
+        .httpBasic(Customizer.withDefaults())
+        .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        .build();
+    }
+
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
@@ -62,9 +80,14 @@ public class SecurityConfig {
         return provider;
     }
 
+  /*   @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+*/
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
-
 }

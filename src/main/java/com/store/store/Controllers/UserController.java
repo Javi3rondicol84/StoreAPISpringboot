@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,9 @@ import com.store.store.Repositories.UserRepository;
 @RestController
 public class UserController {
     
+  //  @Autowired
+   // private PasswordEncoder passwordEncoder;
+
     @Autowired
     private UserRepository userRepository;
     private HttpHelper httpHelper;
@@ -55,6 +59,8 @@ public class UserController {
             userExists = this.usernameAlreadyExists(userName);
         
             if(!userExists) {
+            /*     String encodedPassword = passwordEncoder.encode(user.getPassword());
+                user.setPassword(encodedPassword);*/
                 this.userRepository.save(user);
                 this.usernames.add(userName);
             }
@@ -82,6 +88,10 @@ public class UserController {
             if(!userExists) {
                 oldUser.setUserName(newUser.getUserName());
                 oldUser.setEmail(newUser.getEmail());
+
+              /*   String encodedPassword = passwordEncoder.encode(newUser.getPassword());
+                oldUser.setPassword(encodedPassword);*/
+
                 oldUser.setPassword(newUser.getPassword());
 
                 this.userRepository.save(oldUser);

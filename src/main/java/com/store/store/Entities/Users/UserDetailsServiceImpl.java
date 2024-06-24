@@ -38,10 +38,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         // Agregar permisos como autoridades
         for (PermissionEntity permission : role.getPermissions()) {
             authorityList.add(new SimpleGrantedAuthority(permission.getName()));
+            logger.debug("it workssssss"+permission.getName());
         }
     }
 
-        logger.debug("it works");
+        logger.debug("it works"+userEntity.getPassword());
 
         return new User(userEntity.getUserName(), 
         userEntity.getPassword(), 

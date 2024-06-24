@@ -39,7 +39,7 @@ public class SecurityConfig {
         .csrf(crsf -> crsf.disable()) 
         .httpBasic(Customizer.withDefaults())
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-       /*  .authorizeHttpRequests(http -> {
+         .authorizeHttpRequests(http -> {
             //configurar endpoints publicos
             http.requestMatchers(HttpMethod.GET, "auth/hello").permitAll();
 
@@ -47,12 +47,14 @@ public class SecurityConfig {
 
             http.requestMatchers(HttpMethod.POST, "/users/add").permitAll();
 
+            http.requestMatchers(HttpMethod.POST, "/products/add").permitAll();
+
             //configurar endpoints privados
             http.requestMatchers(HttpMethod.GET, "/auth/hello-secured").hasAnyRole("USER", "ADMIN");
 
             //denegar el resto
-          // http.anyRequest().denyAll();
-        })*/
+            http.anyRequest().denyAll();
+        })
         .build();
     }
 

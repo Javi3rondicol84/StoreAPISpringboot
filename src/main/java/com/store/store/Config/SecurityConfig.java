@@ -14,7 +14,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -40,18 +39,20 @@ public class SecurityConfig {
         .csrf(crsf -> crsf.disable()) 
         .httpBasic(Customizer.withDefaults())
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-        .authorizeHttpRequests(http -> {
+       /*  .authorizeHttpRequests(http -> {
             //configurar endpoints publicos
             http.requestMatchers(HttpMethod.GET, "auth/hello").permitAll();
 
             http.requestMatchers(HttpMethod.GET, "/users/").permitAll();
 
+            http.requestMatchers(HttpMethod.POST, "/users/add").permitAll();
+
             //configurar endpoints privados
             http.requestMatchers(HttpMethod.GET, "/auth/hello-secured").hasAnyRole("USER", "ADMIN");
 
             //denegar el resto
-           http.anyRequest().denyAll();
-        })
+          // http.anyRequest().denyAll();
+        })*/
         .build();
     }
 
@@ -66,19 +67,15 @@ public class SecurityConfig {
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setPasswordEncoder(this.passwordEncoder());
-        //provider.setUserDetailsService(this.userDetailsService());
         provider.setUserDetailsService(userDetailsServiceImpl);
         return provider;
     }
 
-  /*   @Bean
+    @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-*/
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
-    }
+
+
 }

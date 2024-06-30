@@ -41,8 +41,6 @@ public class SecurityConfig {
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
          .authorizeHttpRequests(http -> {
             //configurar endpoints publicos
-            http.requestMatchers(HttpMethod.GET, "auth/hello").permitAll();
-
             http.requestMatchers(HttpMethod.POST, "/users/add", "/users/add/").permitAll();
             http.requestMatchers(HttpMethod.PUT, "/users/update/{$id}").permitAll();
             http.requestMatchers(HttpMethod.DELETE, "/users/delete/{$id}").permitAll();

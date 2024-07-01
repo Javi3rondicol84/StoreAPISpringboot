@@ -128,6 +128,20 @@ public class UserController {
         return this.usernames.contains(username);
     }
 
+    @PostMapping({"users/exists", "users/exists/"})
+    public ResponseEntity<?> userExists(@RequestBody UserEntity user) {
+        if(this.usernames.contains(user.getUserName()) && this.passwordIsCorrect(user.getUserName(), user.getPassword())) {
 
+        }
+        
+
+        return this.httpHelper.getAllItemsResponse(null);
+    }
+    
+    private boolean passwordIsCorrect(String username, String password) {
+        
+
+        return false;
+    }
 
 }

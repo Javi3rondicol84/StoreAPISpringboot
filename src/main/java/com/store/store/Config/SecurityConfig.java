@@ -42,6 +42,7 @@ public class SecurityConfig {
          .authorizeHttpRequests(http -> {
             //configurar endpoints publicos
             http.requestMatchers(HttpMethod.GET, "/users/", "/users").permitAll();
+            http.requestMatchers(HttpMethod.POST, "/users/exists", "/users/exists/").permitAll();
             http.requestMatchers(HttpMethod.POST, "/users/add", "/users/add/").permitAll();
             http.requestMatchers(HttpMethod.PUT, "/users/update/{$id}").permitAll();
             http.requestMatchers(HttpMethod.DELETE, "/users/delete/{$id}").permitAll();

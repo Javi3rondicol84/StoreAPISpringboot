@@ -1,6 +1,5 @@
 package com.store.store.Controllers;
 
-import java.util.HashSet;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +14,18 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.store.store.Entities.Users.UserDetailsServiceImpl;
 import com.store.store.Entities.Users.UserEntity;
 import com.store.store.Helpers.HttpHelper;
 import com.store.store.Repositories.UserRepository;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RestController
 public class UserController {
-    
+     private static final Logger logger = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
+
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -30,11 +33,9 @@ public class UserController {
     private UserRepository userRepository;
     private HttpHelper httpHelper;
 
-    private HashSet<String> usernames;
 
     public UserController() {
         this.httpHelper = new HttpHelper();
-        this.usernames = new HashSet<>();
     }
 
     @GetMapping(value = {"/users/", "/users"})
@@ -66,7 +67,6 @@ public class UserController {
                 user.setCredentialNoExpired(true);
                 user.setEnabled(true);
                 this.userRepository.save(user);
-                this.usernames.add(userName);
             }
             else {
                 return ResponseEntity.status(HttpStatus.CONFLICT).body("El nombre de usuario ya existe");
@@ -102,7 +102,6 @@ public class UserController {
                 oldUser.setPassword(newUser.getPassword());
 
                 this.userRepository.save(oldUser);
-                //ACTUALIZAR hashset this.usernames.
             }
             else {
                 return ResponseEntity.status(HttpStatus.CONFLICT).body("El nombre de usuario ya existe");
@@ -125,21 +124,32 @@ public class UserController {
     }
 
     private boolean usernameAlreadyExists(String username) {
-        return this.usernames.contains(username);
+        return this.userRepository.findUserEntityByUserName(username) != null;
     }
 
-    @PostMapping({"users/exists", "users/exists/"})
+    @PostMapping({"/users/exists", "/users/exists/"})
     public ResponseEntity<?> userExists(@RequestBody UserEntity user) {
-        if(this.usernames.contains(user.getUserName()) && this.passwordIsCorrect(user.getUserName(), user.getPassword())) {
 
+//this.usernames.contains(user.getUserName()) && 
+
+        if(this.passwordIsCorrect(user.getUserName(), user.getPassword())) {
+            return ResponseEntity.status(HttpStatus.OK).body("El usuario existe");
         }
         
-
-        return this.httpHelper.getAllItemsResponse(null);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El usuario no existe o la contraseña es incorrecta");
     }
     
     private boolean passwordIsCorrect(String username, String password) {
+        UserEntity user = this.userRepository.findUserEntityByUserName(username);
+        if(user == null) {
+            return false;
+        }
         
+        if(this.passwordEncoder.matches(password, user.getPassword())) {
+           // logger.debug("sonnnnn igualeeeeeees");
+            return true;
+        }
+
 
         return false;
     }

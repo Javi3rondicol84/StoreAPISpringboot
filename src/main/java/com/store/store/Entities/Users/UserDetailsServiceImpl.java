@@ -42,7 +42,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
     }
 
-        logger.debug("it works"+userEntity.getPassword());
+        //logger.debug("it works"+userEntity.getPassword());
 
         return new User(userEntity.getUserName(), 
         userEntity.getPassword(), 

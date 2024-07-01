@@ -36,20 +36,19 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity
     )  throws Exception {
         return httpSecurity
-        .csrf(crsf -> crsf.disable()) 
-        .httpBasic(Customizer.withDefaults())
-        .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-         .authorizeHttpRequests(http -> {
-            //configurar endpoints publicos
+        .csrf(csrf -> csrf.disable()) // Desactivar CSRF para simplificar la configuración (no recomendado para producción)
+        .httpBasic(Customizer.withDefaults()) // Configuración básica de autenticación HTTP
+        .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Uso de sesiones sin estado
+        .authorizeHttpRequests(http -> {
+            // Configurar endpoints públicos
             http.requestMatchers(HttpMethod.GET, "/users/", "/users").permitAll();
             http.requestMatchers(HttpMethod.POST, "/users/exists", "/users/exists/").permitAll();
             http.requestMatchers(HttpMethod.POST, "/users/add", "/users/add/").permitAll();
-            http.requestMatchers(HttpMethod.PUT, "/users/update/{$id}").permitAll();
-            http.requestMatchers(HttpMethod.DELETE, "/users/delete/{$id}").permitAll();
+            http.requestMatchers(HttpMethod.PUT, "/users/update/{id}").permitAll();
+            http.requestMatchers(HttpMethod.DELETE, "/users/delete/{id}").permitAll();
 
-            //configurar endpoints privados
-
-            //productos
+            // Configurar endpoints privados
+            // Productos
             http.requestMatchers(HttpMethod.GET, "/products/", "/products").hasAnyRole("ADMIN");
             http.requestMatchers(HttpMethod.GET, "/products/{id}").hasAnyRole("ADMIN");
             http.requestMatchers(HttpMethod.GET, "/products/filterByCategory").hasAnyRole("ADMIN");
@@ -58,14 +57,10 @@ public class SecurityConfig {
             http.requestMatchers(HttpMethod.PUT, "/products/update/{id}").hasAnyRole("ADMIN");
             http.requestMatchers(HttpMethod.DELETE, "/products/delete/{id}").hasAnyRole("ADMIN");
 
+            // Usuarios
+            http.requestMatchers(HttpMethod.GET, "/users/{id}").hasAnyRole("ADMIN");
 
-
-            //usuarios
-            //http.requestMatchers(HttpMethod.GET, "/users/", "/users").hasAnyRole("ADMIN");
-            http.requestMatchers(HttpMethod.GET, "/users/$id").hasAnyRole("ADMIN");
-
-
-            //denegar el resto
+            // Denegar el resto
             http.anyRequest().denyAll();
         })
         .build();

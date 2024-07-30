@@ -1,859 +1,124 @@
-2024-06-30T10:20:38.764-03:00  INFO 14204 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 14204 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-06-30T10:20:38.782-03:00  INFO 14204 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-06-30T10:20:38.855-03:00  INFO 14204 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-06-30T10:20:38.857-03:00  INFO 14204 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-06-30T10:20:39.790-03:00  INFO 14204 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-30T10:20:39.890-03:00  INFO 14204 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 2 JPA repository interfaces.
-2024-06-30T10:20:40.770-03:00  INFO 14204 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-30T10:20:40.789-03:00  INFO 14204 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-30T10:20:40.790-03:00  INFO 14204 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-06-30T10:20:40.864-03:00  INFO 14204 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-30T10:20:40.866-03:00  INFO 14204 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2008 ms
-2024-06-30T10:20:41.067-03:00  INFO 14204 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-30T10:20:41.150-03:00  INFO 14204 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-06-30T10:20:41.214-03:00  INFO 14204 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-30T10:20:41.598-03:00  INFO 14204 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-30T10:20:41.637-03:00  INFO 14204 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-30T10:20:41.852-03:00  INFO 14204 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@56c585e0
-2024-06-30T10:20:41.855-03:00  INFO 14204 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-30T10:20:41.900-03:00  WARN 14204 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-06-30T10:20:41.922-03:00  WARN 14204 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-06-30T10:20:42.850-03:00  INFO 14204 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-30T10:20:44.475-03:00  INFO 14204 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-30T10:20:44.867-03:00  INFO 14204 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-06-30T10:20:44.958-03:00  WARN 14204 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-30T10:20:45.014-03:00  INFO 14204 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-06-30T10:20:45.016-03:00  WARN 14204 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-06-30T10:20:45.643-03:00  INFO 14204 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-06-30T10:20:45.697-03:00  INFO 14204 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-06-30T10:20:45.711-03:00  INFO 14204 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 7.583 seconds (process running for 8.14)
-2024-06-30T10:20:50.179-03:00  INFO 14204 --- [store] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-06-30T10:20:50.180-03:00  INFO 14204 --- [store] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-06-30T10:20:50.181-03:00  INFO 14204 --- [store] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-06-30T10:20:50.479-03:00 DEBUG 14204 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssCREATE
-2024-06-30T10:20:50.480-03:00 DEBUG 14204 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssUPDATE
-2024-06-30T10:20:50.480-03:00 DEBUG 14204 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssREAD
-2024-06-30T10:20:50.481-03:00 DEBUG 14204 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it workssssssDELETE
-2024-06-30T10:20:50.481-03:00 DEBUG 14204 --- [store] [http-nio-8080-exec-3] c.s.s.E.Users.UserDetailsServiceImpl     : it works$2a$12$KqqIotOT4nH6dgoMM37Tje9UX109t5Yo.u/vSk3.YRPrSFKhCtRSG
-2024-06-30T11:20:05.649-03:00  INFO 17088 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 17088 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-06-30T11:20:05.653-03:00  INFO 17088 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-06-30T11:20:05.730-03:00  INFO 17088 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-06-30T11:20:05.731-03:00  INFO 17088 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-06-30T11:20:06.688-03:00  INFO 17088 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-30T11:20:06.799-03:00  INFO 17088 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 2 JPA repository interfaces.
-2024-06-30T11:20:07.640-03:00  INFO 17088 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-30T11:20:07.664-03:00  INFO 17088 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-30T11:20:07.665-03:00  INFO 17088 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-06-30T11:20:07.747-03:00  INFO 17088 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-30T11:20:07.748-03:00  INFO 17088 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2015 ms
-2024-06-30T11:20:07.982-03:00  INFO 17088 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-30T11:20:08.084-03:00  INFO 17088 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-06-30T11:20:08.151-03:00  INFO 17088 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-30T11:20:08.534-03:00  INFO 17088 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-30T11:20:08.573-03:00  INFO 17088 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-30T11:20:08.832-03:00  INFO 17088 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1bb7d3ca
-2024-06-30T11:20:08.836-03:00  INFO 17088 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-30T11:20:08.882-03:00  WARN 17088 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-06-30T11:20:08.902-03:00  WARN 17088 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-06-30T11:20:09.780-03:00  INFO 17088 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-30T11:20:11.348-03:00  INFO 17088 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-30T11:20:11.762-03:00  INFO 17088 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-06-30T11:20:11.847-03:00  WARN 17088 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-30T11:20:11.904-03:00  INFO 17088 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-06-30T11:20:11.907-03:00  WARN 17088 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-06-30T11:20:12.523-03:00  INFO 17088 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-06-30T11:20:12.565-03:00  INFO 17088 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-06-30T11:20:12.576-03:00  INFO 17088 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 7.471 seconds (process running for 7.921)
-2024-06-30T11:20:54.984-03:00  INFO 17088 --- [store] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-06-30T11:20:54.985-03:00  INFO 17088 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-06-30T11:20:54.987-03:00  INFO 17088 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-06-30T12:40:56.023-03:00  WARN 17088 --- [store] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m15s816ms206µs).
-2024-06-30T17:52:54.554-03:00  WARN 17088 --- [store] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m23s867ms844µs100ns).
-2024-06-30T19:27:20.197-03:00  INFO 19120 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 19120 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-06-30T19:27:20.201-03:00  INFO 19120 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-06-30T19:27:20.277-03:00  INFO 19120 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-06-30T19:27:20.278-03:00  INFO 19120 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-06-30T19:27:21.286-03:00  INFO 19120 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-30T19:27:21.386-03:00  INFO 19120 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 2 JPA repository interfaces.
-2024-06-30T19:27:22.240-03:00  INFO 19120 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-30T19:27:22.258-03:00  INFO 19120 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-30T19:27:22.259-03:00  INFO 19120 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-06-30T19:27:22.322-03:00  INFO 19120 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-30T19:27:22.323-03:00  INFO 19120 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2044 ms
-2024-06-30T19:27:22.555-03:00  INFO 19120 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-30T19:27:22.654-03:00  INFO 19120 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-06-30T19:27:22.716-03:00  INFO 19120 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-30T19:27:23.081-03:00  INFO 19120 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-30T19:27:23.121-03:00  INFO 19120 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-30T19:27:23.325-03:00  INFO 19120 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f9d5cc
-2024-06-30T19:27:23.328-03:00  INFO 19120 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-30T19:27:23.371-03:00  WARN 19120 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-06-30T19:27:23.398-03:00  WARN 19120 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-06-30T19:27:24.334-03:00  INFO 19120 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-30T19:27:25.717-03:00  INFO 19120 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-30T19:27:26.143-03:00  INFO 19120 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-06-30T19:27:26.237-03:00  WARN 19120 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-30T19:27:26.293-03:00  INFO 19120 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-06-30T19:27:26.296-03:00  WARN 19120 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-06-30T19:27:26.962-03:00  INFO 19120 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-06-30T19:27:27.002-03:00  INFO 19120 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-06-30T19:27:27.012-03:00  INFO 19120 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 7.359 seconds (process running for 7.805)
-2024-06-30T19:31:20.898-03:00  INFO 19120 --- [store] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-06-30T19:31:20.900-03:00  INFO 19120 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-06-30T19:31:20.903-03:00  INFO 19120 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-07-01T10:29:44.592-03:00  INFO 11900 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 11900 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T10:29:44.595-03:00  INFO 11900 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T10:29:44.713-03:00  INFO 11900 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T10:29:44.714-03:00  INFO 11900 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T10:29:46.126-03:00  INFO 11900 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T10:29:46.223-03:00  INFO 11900 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 2 JPA repository interfaces.
-2024-07-01T10:29:47.442-03:00  INFO 11900 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T10:29:47.506-03:00  INFO 11900 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T10:29:47.508-03:00  INFO 11900 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T10:29:47.640-03:00  INFO 11900 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T10:29:47.642-03:00  INFO 11900 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2927 ms
-2024-07-01T10:29:48.003-03:00  INFO 11900 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T10:29:48.131-03:00  INFO 11900 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T10:29:48.215-03:00  INFO 11900 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T10:29:48.748-03:00  INFO 11900 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T10:29:48.816-03:00  INFO 11900 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T10:29:49.221-03:00  INFO 11900 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51e29ebb
-2024-07-01T10:29:49.225-03:00  INFO 11900 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T10:29:49.281-03:00  WARN 11900 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T10:29:49.309-03:00  WARN 11900 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T10:29:50.731-03:00  INFO 11900 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T10:29:53.123-03:00  INFO 11900 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T10:29:54.021-03:00  INFO 11900 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T10:29:54.152-03:00  WARN 11900 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T10:29:54.273-03:00  INFO 11900 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T10:29:54.277-03:00  WARN 11900 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T10:29:55.258-03:00  INFO 11900 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T10:29:55.321-03:00  INFO 11900 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T10:29:55.340-03:00  INFO 11900 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 11.398 seconds (process running for 11.966)
-2024-07-01T10:30:07.933-03:00  INFO 11900 --- [store] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-07-01T10:30:07.955-03:00  INFO 11900 --- [store] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T10:30:07.967-03:00  INFO 11900 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-07-01T10:30:07.987-03:00  INFO 11900 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-07-01T10:30:10.966-03:00  INFO 24588 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 24588 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T10:30:10.971-03:00  INFO 24588 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T10:30:11.107-03:00  INFO 24588 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T10:30:11.108-03:00  INFO 24588 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T10:30:13.616-03:00  INFO 24588 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T10:30:13.794-03:00  INFO 24588 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 158 ms. Found 2 JPA repository interfaces.
-2024-07-01T10:30:15.337-03:00  INFO 24588 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T10:30:15.385-03:00  INFO 24588 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T10:30:15.385-03:00  INFO 24588 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T10:30:15.500-03:00  INFO 24588 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T10:30:15.501-03:00  INFO 24588 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4391 ms
-2024-07-01T10:30:15.877-03:00  INFO 24588 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T10:30:16.060-03:00  INFO 24588 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T10:30:16.227-03:00  INFO 24588 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T10:30:16.840-03:00  INFO 24588 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T10:30:16.892-03:00  INFO 24588 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T10:30:17.243-03:00  INFO 24588 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52202d3
-2024-07-01T10:30:17.251-03:00  INFO 24588 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T10:30:17.340-03:00  WARN 24588 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T10:30:17.374-03:00  WARN 24588 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T10:30:18.642-03:00  INFO 24588 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T10:30:20.424-03:00  INFO 24588 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T10:30:21.082-03:00  INFO 24588 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T10:30:21.223-03:00  WARN 24588 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T10:30:21.334-03:00  INFO 24588 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T10:30:21.337-03:00  WARN 24588 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T10:30:22.664-03:00  INFO 24588 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T10:30:22.745-03:00  INFO 24588 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T10:30:22.775-03:00  INFO 24588 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 12.861 seconds (process running for 13.897)
-2024-07-01T10:31:15.404-03:00  INFO 24588 --- [store] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T10:31:15.406-03:00  INFO 24588 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T10:31:15.412-03:00  INFO 24588 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-07-01T10:31:52.261-03:00  INFO 13860 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 13860 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T10:31:52.265-03:00  INFO 13860 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T10:31:52.349-03:00  INFO 13860 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T10:31:52.350-03:00  INFO 13860 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T10:31:53.502-03:00  INFO 13860 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T10:31:53.612-03:00  INFO 13860 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 2 JPA repository interfaces.
-2024-07-01T10:31:54.631-03:00  INFO 13860 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T10:31:54.653-03:00  INFO 13860 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T10:31:54.655-03:00  INFO 13860 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T10:31:54.731-03:00  INFO 13860 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T10:31:54.732-03:00  INFO 13860 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2381 ms
-2024-07-01T10:31:55.037-03:00  INFO 13860 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T10:31:55.134-03:00  INFO 13860 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T10:31:55.201-03:00  INFO 13860 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T10:31:55.615-03:00  INFO 13860 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T10:31:55.650-03:00  INFO 13860 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T10:31:55.833-03:00  INFO 13860 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f9d5cc
-2024-07-01T10:31:55.835-03:00  INFO 13860 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T10:31:55.884-03:00  WARN 13860 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T10:31:55.904-03:00  WARN 13860 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T10:31:56.922-03:00  INFO 13860 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T10:31:58.386-03:00  INFO 13860 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T10:31:58.886-03:00  INFO 13860 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T10:31:59.013-03:00  WARN 13860 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T10:31:59.089-03:00  INFO 13860 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T10:31:59.096-03:00  WARN 13860 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T10:31:59.873-03:00  INFO 13860 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T10:31:59.922-03:00  INFO 13860 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T10:31:59.950-03:00  INFO 13860 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 8.314 seconds (process running for 8.911)
-2024-07-01T10:32:04.715-03:00  INFO 13860 --- [store] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T10:32:04.716-03:00  INFO 13860 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T10:32:04.718-03:00  INFO 13860 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-07-01T10:32:41.192-03:00  INFO 13860 --- [store] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-07-01T10:32:41.211-03:00  INFO 13860 --- [store] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T10:32:41.217-03:00  INFO 13860 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-07-01T10:32:41.229-03:00  INFO 13860 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-07-01T10:32:43.102-03:00  INFO 25076 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 25076 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T10:32:43.108-03:00  INFO 25076 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T10:32:43.201-03:00  INFO 25076 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T10:32:43.201-03:00  INFO 25076 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T10:32:44.290-03:00  INFO 25076 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T10:32:44.380-03:00  INFO 25076 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 2 JPA repository interfaces.
-2024-07-01T10:32:45.384-03:00  INFO 25076 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T10:32:45.409-03:00  INFO 25076 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T10:32:45.410-03:00  INFO 25076 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T10:32:45.492-03:00  INFO 25076 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T10:32:45.494-03:00  INFO 25076 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2291 ms
-2024-07-01T10:32:45.756-03:00  INFO 25076 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T10:32:45.823-03:00  INFO 25076 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T10:32:45.878-03:00  INFO 25076 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T10:32:46.242-03:00  INFO 25076 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T10:32:46.285-03:00  INFO 25076 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T10:32:46.517-03:00  INFO 25076 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7dc0ff0c
-2024-07-01T10:32:46.519-03:00  INFO 25076 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T10:32:46.569-03:00  WARN 25076 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T10:32:46.595-03:00  WARN 25076 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T10:32:47.639-03:00  INFO 25076 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T10:32:49.174-03:00  INFO 25076 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T10:32:49.667-03:00  INFO 25076 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T10:32:49.798-03:00  WARN 25076 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T10:32:49.878-03:00  INFO 25076 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T10:32:49.880-03:00  WARN 25076 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T10:32:50.852-03:00  INFO 25076 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T10:32:50.908-03:00  INFO 25076 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T10:32:50.920-03:00  INFO 25076 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 8.391 seconds (process running for 8.984)
-2024-07-01T10:32:53.858-03:00  INFO 25076 --- [store] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T10:32:53.859-03:00  INFO 25076 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T10:32:53.861-03:00  INFO 25076 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2024-07-01T10:34:02.604-03:00  INFO 25076 --- [store] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-07-01T10:34:02.638-03:00  INFO 25076 --- [store] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T10:34:02.644-03:00  INFO 25076 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-07-01T10:34:02.659-03:00  INFO 25076 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-07-01T10:34:02.764-03:00  INFO 25076 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 25076 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T10:34:02.765-03:00  INFO 25076 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T10:34:03.078-03:00  INFO 25076 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T10:34:03.095-03:00  INFO 25076 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
-2024-07-01T10:34:03.290-03:00  INFO 25076 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T10:34:03.291-03:00  INFO 25076 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T10:34:03.293-03:00  INFO 25076 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T10:34:03.324-03:00  INFO 25076 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T10:34:03.328-03:00  INFO 25076 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 560 ms
-2024-07-01T10:34:03.408-03:00  INFO 25076 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T10:34:03.415-03:00  INFO 25076 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T10:34:03.445-03:00  INFO 25076 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T10:34:03.448-03:00  INFO 25076 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-07-01T10:34:03.457-03:00  INFO 25076 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ef6ff4a
-2024-07-01T10:34:03.459-03:00  INFO 25076 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-07-01T10:34:03.461-03:00  WARN 25076 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T10:34:03.463-03:00  WARN 25076 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T10:34:03.594-03:00  INFO 25076 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T10:34:05.043-03:00  INFO 25076 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T10:34:05.167-03:00  WARN 25076 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T10:34:05.173-03:00  INFO 25076 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T10:34:05.173-03:00  WARN 25076 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T10:34:05.345-03:00  INFO 25076 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T10:34:05.355-03:00  INFO 25076 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T10:34:05.359-03:00  INFO 25076 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 2.631 seconds (process running for 83.423)
-2024-07-01T10:34:05.362-03:00  INFO 25076 --- [store] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2024-07-01T10:34:29.518-03:00  INFO 2732 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 2732 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T10:34:29.523-03:00  INFO 2732 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T10:34:29.605-03:00  INFO 2732 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T10:34:29.606-03:00  INFO 2732 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T10:34:30.652-03:00  INFO 2732 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T10:34:30.738-03:00  INFO 2732 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 2 JPA repository interfaces.
-2024-07-01T10:34:31.678-03:00  INFO 2732 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T10:34:31.714-03:00  INFO 2732 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T10:34:31.716-03:00  INFO 2732 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T10:34:31.826-03:00  INFO 2732 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T10:34:31.828-03:00  INFO 2732 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2220 ms
-2024-07-01T10:34:32.118-03:00  INFO 2732 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T10:34:32.195-03:00  INFO 2732 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T10:34:32.279-03:00  INFO 2732 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T10:34:32.645-03:00  INFO 2732 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T10:34:32.688-03:00  INFO 2732 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T10:34:32.897-03:00  INFO 2732 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@650fe518
-2024-07-01T10:34:32.900-03:00  INFO 2732 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T10:34:32.945-03:00  WARN 2732 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T10:34:32.964-03:00  WARN 2732 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T10:34:33.934-03:00  INFO 2732 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T10:34:35.158-03:00  INFO 2732 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T10:34:35.684-03:00  INFO 2732 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T10:34:35.800-03:00  WARN 2732 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T10:34:35.864-03:00  INFO 2732 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T10:34:35.869-03:00  WARN 2732 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T10:34:36.674-03:00  INFO 2732 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T10:34:36.747-03:00  INFO 2732 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T10:34:36.762-03:00  INFO 2732 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 7.831 seconds (process running for 8.52)
-2024-07-01T10:34:41.965-03:00  INFO 2732 --- [store] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T10:34:41.967-03:00  INFO 2732 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T10:34:41.970-03:00  INFO 2732 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-07-01T11:06:08.881-03:00  INFO 25464 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 25464 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:06:08.888-03:00  INFO 25464 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:06:08.983-03:00  INFO 25464 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T11:06:08.984-03:00  INFO 25464 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T11:06:10.545-03:00  INFO 25464 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:06:10.667-03:00  INFO 25464 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:06:12.191-03:00  INFO 25464 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:06:12.242-03:00  INFO 25464 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:06:12.243-03:00  INFO 25464 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:06:12.414-03:00  INFO 25464 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:06:12.417-03:00  INFO 25464 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3432 ms
-2024-07-01T11:06:12.896-03:00  INFO 25464 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:06:13.108-03:00  INFO 25464 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T11:06:13.253-03:00  INFO 25464 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:06:13.914-03:00  INFO 25464 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:06:13.993-03:00  INFO 25464 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T11:06:14.376-03:00  INFO 25464 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@650fe518
-2024-07-01T11:06:14.381-03:00  INFO 25464 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T11:06:14.471-03:00  WARN 25464 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:06:14.525-03:00  WARN 25464 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:06:16.253-03:00  INFO 25464 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:06:18.366-03:00  INFO 25464 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:06:19.618-03:00  INFO 25464 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T11:06:19.852-03:00  WARN 25464 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T11:06:20.054-03:00  INFO 25464 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T11:06:20.057-03:00  WARN 25464 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T11:06:21.280-03:00  INFO 25464 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T11:06:21.377-03:00  INFO 25464 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T11:06:21.407-03:00  INFO 25464 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 13.134 seconds (process running for 13.712)
-2024-07-01T11:06:28.580-03:00  INFO 25464 --- [store] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T11:06:28.581-03:00  INFO 25464 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T11:06:28.584-03:00  INFO 25464 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-07-01T11:06:28.999-03:00 DEBUG 25464 --- [store] [http-nio-8080-exec-1] c.s.s.E.Users.UserDetailsServiceImpl     : sssssssssssssssscom.store.store.Entities.Users.UserEntity@14a1dc6
-2024-07-01T11:06:53.293-03:00  INFO 25464 --- [store] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-07-01T11:06:53.306-03:00  INFO 25464 --- [store] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:06:53.314-03:00  INFO 25464 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-07-01T11:06:53.331-03:00  INFO 25464 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-07-01T11:06:53.445-03:00  INFO 25464 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 25464 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:06:53.448-03:00  INFO 25464 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:06:53.830-03:00  INFO 25464 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:06:53.871-03:00  INFO 25464 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:06:54.207-03:00  INFO 25464 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:06:54.208-03:00  INFO 25464 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:06:54.212-03:00  INFO 25464 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:06:54.267-03:00  INFO 25464 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:06:54.268-03:00  INFO 25464 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 816 ms
-2024-07-01T11:06:54.414-03:00  INFO 25464 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:06:54.502-03:00  INFO 25464 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:06:54.539-03:00  INFO 25464 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:06:54.550-03:00  INFO 25464 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-07-01T11:06:54.563-03:00  INFO 25464 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22c1f43
-2024-07-01T11:06:54.566-03:00  INFO 25464 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-07-01T11:06:54.568-03:00  WARN 25464 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:06:54.570-03:00  WARN 25464 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:06:54.822-03:00  INFO 25464 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:07:12.578-03:00  INFO 16020 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 16020 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:07:12.583-03:00  INFO 16020 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:07:12.684-03:00  INFO 16020 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T11:07:12.685-03:00  INFO 16020 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T11:07:14.008-03:00  INFO 16020 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:07:14.149-03:00  INFO 16020 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:07:15.697-03:00  INFO 16020 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:07:15.725-03:00  INFO 16020 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:07:15.729-03:00  INFO 16020 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:07:15.834-03:00  INFO 16020 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:07:15.836-03:00  INFO 16020 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3150 ms
-2024-07-01T11:07:16.189-03:00  INFO 16020 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:07:16.313-03:00  INFO 16020 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T11:07:16.408-03:00  INFO 16020 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:07:16.838-03:00  INFO 16020 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:07:16.883-03:00  INFO 16020 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T11:07:17.142-03:00  INFO 16020 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c27f104
-2024-07-01T11:07:17.146-03:00  INFO 16020 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T11:07:17.212-03:00  WARN 16020 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:07:17.237-03:00  WARN 16020 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:07:18.341-03:00  INFO 16020 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:07:20.063-03:00  INFO 16020 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:07:20.858-03:00  INFO 16020 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T11:07:21.019-03:00  WARN 16020 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T11:07:21.150-03:00  INFO 16020 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T11:07:21.152-03:00  WARN 16020 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T11:07:22.426-03:00  INFO 16020 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T11:07:22.494-03:00  INFO 16020 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T11:07:22.517-03:00  INFO 16020 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 10.836 seconds (process running for 11.523)
-2024-07-01T11:30:02.452-03:00  INFO 16020 --- [store] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T11:30:02.470-03:00  INFO 16020 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T11:30:02.505-03:00  INFO 16020 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 35 ms
-2024-07-01T11:30:03.098-03:00 DEBUG 16020 --- [store] [http-nio-8080-exec-2] c.s.s.E.Users.UserDetailsServiceImpl     : sssssssssssssssssantiagopass:$2a$12$KqqIotOT4nH6dgoMM37Tje9UX109t5Yo.u/vSk3.YRPrSFKhCtRSG
-2024-07-01T11:31:17.011-03:00  INFO 25580 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 25580 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:31:17.017-03:00  INFO 25580 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:31:17.083-03:00  INFO 25580 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T11:31:17.083-03:00  INFO 25580 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T11:31:17.915-03:00  INFO 25580 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:31:18.027-03:00  INFO 25580 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:31:18.825-03:00  INFO 25580 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:31:18.844-03:00  INFO 25580 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:31:18.857-03:00  INFO 25580 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:31:18.928-03:00  INFO 25580 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:31:18.928-03:00  INFO 25580 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1845 ms
-2024-07-01T11:31:19.144-03:00  INFO 25580 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:31:19.245-03:00  INFO 25580 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T11:31:19.312-03:00  INFO 25580 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:31:19.644-03:00  INFO 25580 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:31:19.682-03:00  INFO 25580 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T11:31:19.860-03:00  INFO 25580 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7dc0ff0c
-2024-07-01T11:31:19.863-03:00  INFO 25580 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T11:31:19.899-03:00  WARN 25580 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:31:19.912-03:00  WARN 25580 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:31:20.923-03:00  INFO 25580 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:31:22.262-03:00  INFO 25580 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:31:22.713-03:00  INFO 25580 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T11:31:22.815-03:00  WARN 25580 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T11:31:22.866-03:00  INFO 25580 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T11:31:22.866-03:00  WARN 25580 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T11:31:23.497-03:00  INFO 25580 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T11:31:23.531-03:00  INFO 25580 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T11:31:23.546-03:00  INFO 25580 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 7.085 seconds (process running for 7.564)
-2024-07-01T11:31:26.960-03:00  INFO 25580 --- [store] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T11:31:26.963-03:00  INFO 25580 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T11:31:26.964-03:00  INFO 25580 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-07-01T11:31:27.267-03:00 DEBUG 25580 --- [store] [http-nio-8080-exec-2] c.s.s.E.Users.UserDetailsServiceImpl     : sssssssssssssssssantiagopass:1234
-2024-07-01T11:32:01.620-03:00  INFO 25580 --- [store] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-07-01T11:32:01.634-03:00  INFO 25580 --- [store] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:32:01.642-03:00  INFO 25580 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-07-01T11:32:01.649-03:00  INFO 25580 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-07-01T11:32:01.756-03:00  INFO 25580 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 25580 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:32:01.757-03:00  INFO 25580 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:32:01.980-03:00  INFO 25580 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:32:02.005-03:00  INFO 25580 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:32:02.204-03:00  INFO 25580 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:32:02.206-03:00  INFO 25580 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:32:02.207-03:00  INFO 25580 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:32:02.247-03:00  INFO 25580 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:32:02.248-03:00  INFO 25580 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 486 ms
-2024-07-01T11:32:02.311-03:00  INFO 25580 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:32:02.321-03:00  INFO 25580 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:32:02.332-03:00  INFO 25580 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:32:02.332-03:00  INFO 25580 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-07-01T11:32:02.342-03:00  INFO 25580 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@232c492
-2024-07-01T11:32:02.343-03:00  INFO 25580 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-07-01T11:32:02.345-03:00  WARN 25580 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:32:02.346-03:00  WARN 25580 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:32:02.445-03:00  INFO 25580 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:32:03.786-03:00  INFO 25580 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:32:03.900-03:00  WARN 25580 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T11:32:03.910-03:00  INFO 25580 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T11:32:03.912-03:00  WARN 25580 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T11:32:04.037-03:00  INFO 25580 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T11:32:04.041-03:00  INFO 25580 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T11:32:04.050-03:00  INFO 25580 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 2.339 seconds (process running for 48.063)
-2024-07-01T11:32:04.053-03:00  INFO 25580 --- [store] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2024-07-01T11:32:09.935-03:00  INFO 25720 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 25720 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:32:09.935-03:00  INFO 25720 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:32:09.985-03:00  INFO 25720 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T11:32:09.985-03:00  INFO 25720 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T11:32:10.875-03:00  INFO 25720 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:32:10.983-03:00  INFO 25720 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:32:11.848-03:00  INFO 25720 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:32:11.876-03:00  INFO 25720 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:32:11.877-03:00  INFO 25720 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:32:11.944-03:00  INFO 25720 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:32:11.949-03:00  INFO 25720 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1959 ms
-2024-07-01T11:32:12.159-03:00  INFO 25720 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:32:12.225-03:00  INFO 25720 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T11:32:12.277-03:00  INFO 25720 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:32:12.574-03:00  INFO 25720 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:32:12.609-03:00  INFO 25720 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T11:32:12.772-03:00  INFO 25720 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@65bff6e3
-2024-07-01T11:32:12.772-03:00  INFO 25720 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T11:32:12.809-03:00  WARN 25720 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:32:12.826-03:00  WARN 25720 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:32:13.666-03:00  INFO 25720 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:32:15.094-03:00  INFO 25720 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:32:15.673-03:00  INFO 25720 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T11:32:16.248-03:00  WARN 25720 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T11:32:16.453-03:00  INFO 25720 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T11:32:16.455-03:00  WARN 25720 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T11:32:17.852-03:00  INFO 25720 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T11:32:17.925-03:00  INFO 25720 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T11:32:17.953-03:00  INFO 25720 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 8.573 seconds (process running for 9.031)
-2024-07-01T11:34:32.601-03:00  INFO 15744 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 15744 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:34:32.604-03:00  INFO 15744 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:34:32.668-03:00  INFO 15744 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T11:34:32.668-03:00  INFO 15744 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T11:34:33.489-03:00  INFO 15744 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:34:33.576-03:00  INFO 15744 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:34:34.399-03:00  INFO 15744 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:34:34.419-03:00  INFO 15744 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:34:34.419-03:00  INFO 15744 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:34:34.486-03:00  INFO 15744 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:34:34.486-03:00  INFO 15744 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1817 ms
-2024-07-01T11:34:34.696-03:00  INFO 15744 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:34:34.786-03:00  INFO 15744 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T11:34:34.836-03:00  INFO 15744 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:34:35.147-03:00  INFO 15744 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:34:35.186-03:00  INFO 15744 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T11:34:35.349-03:00  INFO 15744 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4dcfbc0c
-2024-07-01T11:34:35.366-03:00  INFO 15744 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T11:34:35.402-03:00  WARN 15744 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:34:35.436-03:00  WARN 15744 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:34:36.385-03:00  INFO 15744 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:34:37.759-03:00  INFO 15744 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:34:38.148-03:00  INFO 15744 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T11:34:38.235-03:00  WARN 15744 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T11:34:38.286-03:00  INFO 15744 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T11:34:38.286-03:00  WARN 15744 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T11:34:38.840-03:00  INFO 15744 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T11:34:38.886-03:00  INFO 15744 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T11:34:38.886-03:00  INFO 15744 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 6.818 seconds (process running for 7.347)
-2024-07-01T11:34:43.546-03:00  INFO 15744 --- [store] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T11:34:43.547-03:00  INFO 15744 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T11:34:43.549-03:00  INFO 15744 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-07-01T11:35:11.833-03:00  INFO 15744 --- [store] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-07-01T11:35:11.838-03:00  INFO 15744 --- [store] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:35:11.851-03:00  INFO 15744 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-07-01T11:35:11.870-03:00  INFO 15744 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-07-01T11:35:11.967-03:00  INFO 15744 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 15744 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:35:11.967-03:00  INFO 15744 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:35:13.803-03:00  INFO 24948 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 24948 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:35:13.803-03:00  INFO 24948 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:35:13.880-03:00  INFO 24948 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T11:35:13.880-03:00  INFO 24948 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T11:35:14.678-03:00  INFO 24948 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:35:14.817-03:00  INFO 24948 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:35:15.568-03:00  INFO 24948 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:35:15.584-03:00  INFO 24948 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:35:15.584-03:00  INFO 24948 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:35:15.651-03:00  INFO 24948 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:35:15.651-03:00  INFO 24948 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1771 ms
-2024-07-01T11:35:15.850-03:00  INFO 24948 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:35:15.916-03:00  INFO 24948 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T11:35:15.967-03:00  INFO 24948 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:35:16.262-03:00  INFO 24948 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:35:16.301-03:00  INFO 24948 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T11:35:16.463-03:00  INFO 24948 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7dc0ff0c
-2024-07-01T11:35:16.479-03:00  INFO 24948 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T11:35:16.512-03:00  WARN 24948 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:35:16.518-03:00  WARN 24948 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:35:17.398-03:00  INFO 24948 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:35:18.727-03:00  INFO 24948 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:35:19.116-03:00  INFO 24948 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T11:35:19.210-03:00  WARN 24948 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T11:35:19.251-03:00  INFO 24948 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T11:35:19.251-03:00  WARN 24948 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T11:35:19.827-03:00  INFO 24948 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T11:35:19.884-03:00  INFO 24948 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T11:35:19.884-03:00  INFO 24948 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 6.663 seconds (process running for 7.127)
-2024-07-01T11:35:23.359-03:00  INFO 24948 --- [store] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T11:35:23.360-03:00  INFO 24948 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T11:35:23.362-03:00  INFO 24948 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-07-01T11:35:23.708-03:00 DEBUG 24948 --- [store] [http-nio-8080-exec-2] c.s.s.E.Users.UserDetailsServiceImpl     : no son igualeeeeeees
-2024-07-01T11:35:56.570-03:00  INFO 20872 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 20872 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:35:56.573-03:00  INFO 20872 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:35:56.642-03:00  INFO 20872 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T11:35:56.642-03:00  INFO 20872 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T11:35:57.562-03:00  INFO 20872 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:35:57.655-03:00  INFO 20872 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:35:58.564-03:00  INFO 20872 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:35:58.590-03:00  INFO 20872 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:35:58.592-03:00  INFO 20872 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:35:58.667-03:00  INFO 20872 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:35:58.668-03:00  INFO 20872 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2025 ms
-2024-07-01T11:35:58.910-03:00  INFO 20872 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:35:58.968-03:00  INFO 20872 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T11:35:59.019-03:00  INFO 20872 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:35:59.376-03:00  INFO 20872 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:35:59.413-03:00  INFO 20872 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T11:35:59.605-03:00  INFO 20872 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@283bebf5
-2024-07-01T11:35:59.608-03:00  INFO 20872 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T11:35:59.659-03:00  WARN 20872 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:35:59.679-03:00  WARN 20872 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:36:00.507-03:00  INFO 20872 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:36:01.827-03:00  INFO 20872 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:36:02.263-03:00  INFO 20872 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T11:36:02.362-03:00  WARN 20872 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T11:36:02.420-03:00  INFO 20872 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T11:36:02.422-03:00  WARN 20872 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T11:36:03.017-03:00  INFO 20872 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T11:36:03.048-03:00  INFO 20872 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T11:36:03.058-03:00  INFO 20872 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 7.051 seconds (process running for 7.555)
-2024-07-01T11:36:12.638-03:00  INFO 20872 --- [store] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T11:36:12.639-03:00  INFO 20872 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T11:36:12.641-03:00  INFO 20872 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-07-01T11:36:13.007-03:00 DEBUG 20872 --- [store] [http-nio-8080-exec-1] c.s.s.E.Users.UserDetailsServiceImpl     : no son igualeeeeeees: $2a$10$jKkA1kvsC3/5WMae6yHIoerWhfynhd7aEBE2/eTFr1Z6qwOlEleOG, s:$2a$12$KqqIotOT4nH6dgoMM37Tje9UX109t5Yo.u/vSk3.YRPrSFKhCtRSG
-2024-07-01T11:47:28.253-03:00  INFO 20872 --- [store] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-07-01T11:47:28.270-03:00  INFO 20872 --- [store] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:47:28.283-03:00  INFO 20872 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-07-01T11:47:28.311-03:00  INFO 20872 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-07-01T11:47:28.416-03:00  INFO 20872 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 20872 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:47:28.418-03:00  INFO 20872 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:47:28.635-03:00  INFO 20872 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:47:28.651-03:00  INFO 20872 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:47:28.799-03:00  INFO 20872 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:47:28.799-03:00  INFO 20872 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:47:28.799-03:00  INFO 20872 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:47:28.839-03:00  INFO 20872 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:47:28.839-03:00  INFO 20872 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 417 ms
-2024-07-01T11:47:28.866-03:00  INFO 20872 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:47:28.883-03:00  INFO 20872 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:47:28.893-03:00  INFO 20872 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:47:28.898-03:00  INFO 20872 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-07-01T11:47:28.899-03:00  INFO 20872 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ada5da6
-2024-07-01T11:47:28.907-03:00  INFO 20872 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-07-01T11:47:28.908-03:00  WARN 20872 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:47:28.908-03:00  WARN 20872 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:47:29.023-03:00  INFO 20872 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:47:30.338-03:00  INFO 20872 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:47:30.436-03:00  WARN 20872 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T11:47:30.443-03:00  INFO 20872 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T11:47:30.445-03:00  WARN 20872 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T11:47:30.611-03:00  INFO 20872 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T11:47:30.621-03:00  INFO 20872 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T11:47:30.625-03:00  INFO 20872 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 2.256 seconds (process running for 695.122)
-2024-07-01T11:47:30.628-03:00  INFO 20872 --- [store] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2024-07-01T11:47:42.224-03:00  INFO 20872 --- [store] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-07-01T11:47:42.235-03:00  INFO 20872 --- [store] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:47:42.236-03:00  INFO 20872 --- [store] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2024-07-01T11:47:42.239-03:00  INFO 20872 --- [store] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2024-07-01T11:47:42.316-03:00  INFO 20872 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 20872 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:47:42.317-03:00  INFO 20872 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:47:42.495-03:00  INFO 20872 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:47:42.516-03:00  INFO 20872 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:47:42.621-03:00  INFO 20872 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:47:42.632-03:00  INFO 20872 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:47:42.633-03:00  INFO 20872 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:47:42.651-03:00  INFO 20872 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:47:42.651-03:00  INFO 20872 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 331 ms
-2024-07-01T11:47:42.683-03:00  INFO 20872 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:47:42.683-03:00  INFO 20872 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:47:42.701-03:00  INFO 20872 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:47:42.701-03:00  INFO 20872 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2024-07-01T11:47:42.701-03:00  INFO 20872 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d6a2e9e
-2024-07-01T11:47:42.701-03:00  INFO 20872 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2024-07-01T11:47:42.701-03:00  WARN 20872 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:47:42.701-03:00  WARN 20872 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:47:42.788-03:00  INFO 20872 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:47:44.033-03:00  INFO 20872 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:47:44.130-03:00  WARN 20872 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T11:47:44.135-03:00  INFO 20872 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T11:47:44.135-03:00  WARN 20872 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T11:47:44.246-03:00  INFO 20872 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T11:47:44.249-03:00  INFO 20872 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T11:47:44.257-03:00  INFO 20872 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 1.974 seconds (process running for 708.756)
-2024-07-01T11:47:44.257-03:00  INFO 20872 --- [store] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2024-07-01T11:47:52.042-03:00  INFO 24228 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 24228 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:47:52.048-03:00  INFO 24228 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:47:52.122-03:00  INFO 24228 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T11:47:52.122-03:00  INFO 24228 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T11:47:52.988-03:00  INFO 24228 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:47:53.073-03:00  INFO 24228 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:47:53.885-03:00  INFO 24228 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:47:53.905-03:00  INFO 24228 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:47:53.905-03:00  INFO 24228 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:47:53.966-03:00  INFO 24228 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:47:53.966-03:00  INFO 24228 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1844 ms
-2024-07-01T11:47:54.149-03:00  INFO 24228 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:47:54.200-03:00  INFO 24228 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T11:47:54.250-03:00  INFO 24228 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:47:54.534-03:00  INFO 24228 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:47:54.566-03:00  INFO 24228 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T11:47:54.721-03:00  INFO 24228 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6f060f36
-2024-07-01T11:47:54.724-03:00  INFO 24228 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T11:47:54.749-03:00  WARN 24228 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:47:54.779-03:00  WARN 24228 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:47:55.648-03:00  INFO 24228 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:47:57.134-03:00  INFO 24228 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:47:57.569-03:00  INFO 24228 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T11:47:57.678-03:00  WARN 24228 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T11:47:57.734-03:00  INFO 24228 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T11:47:57.734-03:00  WARN 24228 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T11:47:58.369-03:00  INFO 24228 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T11:47:58.417-03:00  INFO 24228 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T11:47:58.434-03:00  INFO 24228 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 6.935 seconds (process running for 7.38)
-2024-07-01T11:48:02.972-03:00  INFO 24228 --- [store] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T11:48:02.973-03:00  INFO 24228 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T11:48:02.975-03:00  INFO 24228 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-07-01T11:48:03.840-03:00 DEBUG 24228 --- [store] [http-nio-8080-exec-2] c.s.s.E.Users.UserDetailsServiceImpl     : sonnnnn igualeeeeeees
-2024-07-01T11:51:04.041-03:00  INFO 24228 --- [store] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-07-01T11:51:04.064-03:00  INFO 24228 --- [store] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:51:04.064-03:00  INFO 24228 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-07-01T11:51:04.074-03:00  INFO 24228 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-07-01T11:51:04.174-03:00  INFO 24228 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 24228 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:51:04.174-03:00  INFO 24228 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:51:04.390-03:00  INFO 24228 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:51:04.423-03:00  INFO 24228 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:51:04.590-03:00  INFO 24228 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:51:04.590-03:00  INFO 24228 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:51:04.590-03:00  INFO 24228 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:51:04.625-03:00  INFO 24228 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:51:04.625-03:00  INFO 24228 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 451 ms
-2024-07-01T11:51:04.674-03:00  INFO 24228 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:51:04.674-03:00  INFO 24228 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:51:04.691-03:00  INFO 24228 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:51:04.691-03:00  INFO 24228 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-07-01T11:51:04.706-03:00  INFO 24228 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24d3c917
-2024-07-01T11:51:04.707-03:00  INFO 24228 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-07-01T11:51:04.709-03:00  WARN 24228 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:51:04.710-03:00  WARN 24228 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:51:04.823-03:00  INFO 24228 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:51:06.656-03:00  INFO 24484 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 24484 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T11:51:06.658-03:00  INFO 24484 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T11:51:06.712-03:00  INFO 24484 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T11:51:06.712-03:00  INFO 24484 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T11:51:07.538-03:00  INFO 24484 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T11:51:07.606-03:00  INFO 24484 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 2 JPA repository interfaces.
-2024-07-01T11:51:08.384-03:00  INFO 24484 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T11:51:08.407-03:00  INFO 24484 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T11:51:08.407-03:00  INFO 24484 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T11:51:08.500-03:00  INFO 24484 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T11:51:08.501-03:00  INFO 24484 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1789 ms
-2024-07-01T11:51:08.707-03:00  INFO 24484 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T11:51:08.757-03:00  INFO 24484 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T11:51:08.823-03:00  INFO 24484 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T11:51:09.144-03:00  INFO 24484 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T11:51:09.174-03:00  INFO 24484 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T11:51:09.337-03:00  INFO 24484 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7dc0ff0c
-2024-07-01T11:51:09.337-03:00  INFO 24484 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T11:51:09.389-03:00  WARN 24484 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T11:51:09.391-03:00  WARN 24484 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T11:51:10.248-03:00  INFO 24484 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T11:51:11.756-03:00  INFO 24484 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T11:51:12.111-03:00  INFO 24484 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T11:51:12.193-03:00  WARN 24484 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T11:51:12.240-03:00  INFO 24484 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T11:51:12.240-03:00  WARN 24484 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T11:51:12.803-03:00  INFO 24484 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T11:51:12.839-03:00  INFO 24484 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T11:51:12.856-03:00  INFO 24484 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 6.769 seconds (process running for 7.26)
-2024-07-01T11:51:14.981-03:00  INFO 24484 --- [store] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T11:51:14.982-03:00  INFO 24484 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T11:51:14.984-03:00  INFO 24484 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-07-01T11:51:15.653-03:00 DEBUG 24484 --- [store] [http-nio-8080-exec-1] c.s.s.E.Users.UserDetailsServiceImpl     : sonnnnn igualeeeeeees
-2024-07-01T13:23:43.005-03:00  INFO 23888 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 23888 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T13:23:43.008-03:00  INFO 23888 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T13:23:43.088-03:00  INFO 23888 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T13:23:43.088-03:00  INFO 23888 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T13:23:44.055-03:00  INFO 23888 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T13:23:44.147-03:00  INFO 23888 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 2 JPA repository interfaces.
-2024-07-01T13:23:45.054-03:00  INFO 23888 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T13:23:45.082-03:00  INFO 23888 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T13:23:45.085-03:00  INFO 23888 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T13:23:45.159-03:00  INFO 23888 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T13:23:45.160-03:00  INFO 23888 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2071 ms
-2024-07-01T13:23:45.404-03:00  INFO 23888 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T13:23:45.492-03:00  INFO 23888 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T13:23:45.554-03:00  INFO 23888 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T13:23:45.917-03:00  INFO 23888 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T13:23:45.960-03:00  INFO 23888 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T13:23:46.146-03:00  INFO 23888 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ff855fc
-2024-07-01T13:23:46.150-03:00  INFO 23888 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T13:23:46.192-03:00  WARN 23888 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T13:23:46.217-03:00  WARN 23888 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T13:23:47.175-03:00  INFO 23888 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T13:23:48.573-03:00  INFO 23888 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T13:23:49.004-03:00  INFO 23888 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T13:23:49.086-03:00  WARN 23888 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T13:23:49.147-03:00  INFO 23888 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T13:23:49.150-03:00  WARN 23888 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T13:23:49.762-03:00  INFO 23888 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T13:23:49.799-03:00  INFO 23888 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T13:23:49.811-03:00  INFO 23888 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 7.332 seconds (process running for 7.781)
-2024-07-01T13:27:32.094-03:00  INFO 23888 --- [store] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T13:27:32.096-03:00  INFO 23888 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T13:27:32.098-03:00  INFO 23888 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-07-01T13:27:32.187-03:00  WARN 23888 --- [store] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/data;charset=UTF-8' is not supported]
-2024-07-01T13:28:31.915-03:00  WARN 23888 --- [store] [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/data;charset=UTF-8' is not supported]
-2024-07-01T13:29:54.977-03:00  WARN 23888 --- [store] [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/data;charset=UTF-8' is not supported]
-2024-07-01T13:30:35.185-03:00  WARN 23888 --- [store] [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<?> com.store.store.Controllers.UserController.userExists(com.store.store.Entities.Users.UserEntity)]
-2024-07-01T13:31:20.374-03:00  WARN 23888 --- [store] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<?> com.store.store.Controllers.UserController.userExists(com.store.store.Entities.Users.UserEntity)]
-2024-07-01T13:33:39.962-03:00  INFO 23888 --- [store] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-07-01T13:33:39.977-03:00  INFO 23888 --- [store] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T13:33:39.983-03:00  INFO 23888 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-07-01T13:33:39.997-03:00  INFO 23888 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-07-01T13:33:40.123-03:00  INFO 23888 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 23888 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T13:33:40.125-03:00  INFO 23888 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T13:33:40.507-03:00  INFO 23888 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T13:33:40.538-03:00  INFO 23888 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
-2024-07-01T13:33:40.679-03:00  INFO 23888 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T13:33:40.681-03:00  INFO 23888 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T13:33:40.682-03:00  INFO 23888 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T13:33:40.705-03:00  INFO 23888 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T13:33:40.705-03:00  INFO 23888 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 573 ms
-2024-07-01T13:33:40.753-03:00  INFO 23888 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T13:33:40.755-03:00  INFO 23888 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T13:33:40.768-03:00  INFO 23888 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T13:33:40.770-03:00  INFO 23888 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-07-01T13:33:40.776-03:00  INFO 23888 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e2c1068
-2024-07-01T13:33:40.778-03:00  INFO 23888 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-07-01T13:33:40.779-03:00  WARN 23888 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T13:33:40.780-03:00  WARN 23888 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T13:33:40.915-03:00  INFO 23888 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T13:33:42.346-03:00  INFO 23888 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T13:33:42.456-03:00  WARN 23888 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T13:33:42.476-03:00  INFO 23888 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T13:33:42.477-03:00  WARN 23888 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T13:33:44.651-03:00  INFO 13040 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 13040 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T13:33:44.654-03:00  INFO 13040 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T13:33:44.733-03:00  INFO 13040 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T13:33:44.733-03:00  INFO 13040 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T13:33:45.710-03:00  INFO 13040 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T13:33:45.793-03:00  INFO 13040 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 2 JPA repository interfaces.
-2024-07-01T13:33:46.605-03:00  INFO 13040 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T13:33:46.624-03:00  INFO 13040 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T13:33:46.625-03:00  INFO 13040 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T13:33:46.688-03:00  INFO 13040 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T13:33:46.689-03:00  INFO 13040 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1955 ms
-2024-07-01T13:33:46.908-03:00  INFO 13040 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T13:33:46.989-03:00  INFO 13040 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T13:33:47.039-03:00  INFO 13040 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T13:33:47.472-03:00  INFO 13040 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T13:33:47.521-03:00  INFO 13040 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T13:33:47.680-03:00  INFO 13040 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@573548dc
-2024-07-01T13:33:47.682-03:00  INFO 13040 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T13:33:47.724-03:00  WARN 13040 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T13:33:47.750-03:00  WARN 13040 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T13:33:48.685-03:00  INFO 13040 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T13:33:50.116-03:00  INFO 13040 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T13:33:50.623-03:00  INFO 13040 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T13:33:50.712-03:00  WARN 13040 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T13:33:50.768-03:00  INFO 13040 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T13:33:50.770-03:00  WARN 13040 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T13:33:51.607-03:00  INFO 13040 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T13:33:51.692-03:00  INFO 13040 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T13:33:51.704-03:00  INFO 13040 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 7.758 seconds (process running for 8.485)
-2024-07-01T13:34:01.415-03:00  INFO 13040 --- [store] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T13:34:01.416-03:00  INFO 13040 --- [store] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T13:34:01.418-03:00  INFO 13040 --- [store] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-07-01T13:34:06.998-03:00  WARN 13040 --- [store] [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<?> com.store.store.Controllers.UserController.userExists(com.store.store.Entities.Users.UserEntity)]
-2024-07-01T13:35:11.691-03:00  WARN 13040 --- [store] [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/data;charset=UTF-8' is not supported]
-2024-07-01T13:37:09.973-03:00  INFO 23764 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 23764 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
-2024-07-01T13:37:09.975-03:00  INFO 23764 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
-2024-07-01T13:37:10.034-03:00  INFO 23764 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-01T13:37:10.036-03:00  INFO 23764 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-01T13:37:10.855-03:00  INFO 23764 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-01T13:37:10.942-03:00  INFO 23764 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 2 JPA repository interfaces.
-2024-07-01T13:37:11.701-03:00  INFO 23764 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-01T13:37:11.718-03:00  INFO 23764 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-01T13:37:11.719-03:00  INFO 23764 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-07-01T13:37:11.780-03:00  INFO 23764 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-01T13:37:11.781-03:00  INFO 23764 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1744 ms
-2024-07-01T13:37:11.987-03:00  INFO 23764 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-01T13:37:12.056-03:00  INFO 23764 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-01T13:37:12.111-03:00  INFO 23764 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-01T13:37:12.398-03:00  INFO 23764 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-01T13:37:12.469-03:00  INFO 23764 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-01T13:37:12.612-03:00  INFO 23764 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b7158b4
-2024-07-01T13:37:12.615-03:00  INFO 23764 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-01T13:37:12.650-03:00  WARN 23764 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
-2024-07-01T13:37:12.668-03:00  WARN 23764 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-01T13:37:13.443-03:00  INFO 23764 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-01T13:37:14.851-03:00  INFO 23764 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-01T13:37:15.251-03:00  INFO 23764 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-01T13:37:15.335-03:00  WARN 23764 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-01T13:37:15.385-03:00  INFO 23764 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-01T13:37:15.387-03:00  WARN 23764 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-01T13:37:15.966-03:00  INFO 23764 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-01T13:37:15.993-03:00  INFO 23764 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-01T13:37:16.003-03:00  INFO 23764 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 6.553 seconds (process running for 7.046)
-2024-07-01T13:37:22.215-03:00  INFO 23764 --- [store] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-01T13:37:22.216-03:00  INFO 23764 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-01T13:37:22.217-03:00  INFO 23764 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-07-30T10:40:36.290-03:00  INFO 9120 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 9120 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
+2024-07-30T10:40:36.316-03:00  INFO 9120 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-30T10:40:36.436-03:00  INFO 9120 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-30T10:40:36.437-03:00  INFO 9120 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-30T10:40:38.628-03:00  INFO 9120 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-30T10:40:38.808-03:00  INFO 9120 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 134 ms. Found 2 JPA repository interfaces.
+2024-07-30T10:40:40.499-03:00  INFO 9120 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-30T10:40:40.599-03:00  INFO 9120 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-30T10:40:40.607-03:00  INFO 9120 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-30T10:40:40.834-03:00  INFO 9120 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-30T10:40:40.837-03:00  INFO 9120 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4398 ms
+2024-07-30T10:40:41.806-03:00  INFO 9120 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-30T10:40:42.061-03:00  INFO 9120 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-30T10:40:42.174-03:00  INFO 9120 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-30T10:40:43.048-03:00  INFO 9120 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-30T10:40:43.153-03:00  INFO 9120 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-30T10:40:43.564-03:00  INFO 9120 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@968ebc4
+2024-07-30T10:40:43.568-03:00  INFO 9120 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-30T10:40:43.668-03:00  WARN 9120 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-07-30T10:40:43.738-03:00  WARN 9120 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-30T10:40:45.822-03:00  INFO 9120 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-30T10:40:48.002-03:00  INFO 9120 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-30T10:40:48.826-03:00  INFO 9120 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-30T10:40:49.065-03:00  WARN 9120 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-30T10:40:49.219-03:00  INFO 9120 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-30T10:40:49.222-03:00  WARN 9120 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-30T10:40:50.901-03:00  INFO 9120 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-30T10:40:50.983-03:00  INFO 9120 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-30T10:40:51.007-03:00  INFO 9120 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 15.566 seconds (process running for 16.35)
+2024-07-30T10:41:20.506-03:00  INFO 9120 --- [store] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-30T10:41:20.507-03:00  INFO 9120 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-30T10:41:20.508-03:00  INFO 9120 --- [store] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-07-30T10:42:33.606-03:00  WARN 9120 --- [store] [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'category' for method parameter type String is not present]
+2024-07-30T10:42:35.609-03:00  WARN 9120 --- [store] [http-nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'category' for method parameter type String is not present]
+2024-07-30T10:45:13.101-03:00  INFO 9120 --- [store] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-07-30T10:45:13.117-03:00  INFO 9120 --- [store] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-30T10:45:13.124-03:00  INFO 9120 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-30T10:45:13.136-03:00  INFO 9120 --- [store] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-30T10:45:13.240-03:00  INFO 9120 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 9120 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
+2024-07-30T10:45:13.242-03:00  INFO 9120 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-30T10:45:13.567-03:00  INFO 9120 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-30T10:45:13.590-03:00  INFO 9120 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 2 JPA repository interfaces.
+2024-07-30T10:45:13.764-03:00  INFO 9120 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-30T10:45:13.767-03:00  INFO 9120 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-30T10:45:13.768-03:00  INFO 9120 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-30T10:45:13.798-03:00  INFO 9120 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-30T10:45:13.800-03:00  INFO 9120 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 550 ms
+2024-07-30T10:45:13.860-03:00  INFO 9120 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-30T10:45:13.863-03:00  INFO 9120 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-30T10:45:13.880-03:00  INFO 9120 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-30T10:45:13.883-03:00  INFO 9120 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-07-30T10:45:13.889-03:00  INFO 9120 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@75354a5c
+2024-07-30T10:45:13.890-03:00  INFO 9120 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-07-30T10:45:13.892-03:00  WARN 9120 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-07-30T10:45:13.893-03:00  WARN 9120 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-30T10:45:14.028-03:00  INFO 9120 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-30T10:45:15.375-03:00  INFO 9120 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-30T10:45:15.509-03:00  WARN 9120 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-30T10:45:15.519-03:00  INFO 9120 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-30T10:45:15.520-03:00  WARN 9120 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-30T10:45:15.738-03:00  INFO 9120 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-30T10:45:15.750-03:00  INFO 9120 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-30T10:45:15.755-03:00  INFO 9120 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 2.553 seconds (process running for 281.097)
+2024-07-30T10:45:15.758-03:00  INFO 9120 --- [store] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-07-30T10:52:28.295-03:00  INFO 9120 --- [store] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2024-07-30T10:52:28.295-03:00  INFO 9120 --- [store] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-30T10:52:28.295-03:00  INFO 9120 --- [store] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-07-30T10:52:28.295-03:00  INFO 9120 --- [store] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-07-30T10:52:28.381-03:00  INFO 9120 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 9120 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
+2024-07-30T10:52:28.381-03:00  INFO 9120 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-30T10:52:28.571-03:00  INFO 9120 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-30T10:52:28.576-03:00  INFO 9120 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 2 JPA repository interfaces.
+2024-07-30T10:52:28.691-03:00  INFO 9120 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-30T10:52:28.691-03:00  INFO 9120 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-30T10:52:28.691-03:00  INFO 9120 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-30T10:52:28.724-03:00  INFO 9120 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-30T10:52:28.724-03:00  INFO 9120 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 343 ms
+2024-07-30T10:52:28.745-03:00  INFO 9120 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-30T10:52:28.760-03:00  INFO 9120 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-30T10:52:28.771-03:00  INFO 9120 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-30T10:52:28.771-03:00  INFO 9120 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-07-30T10:52:28.778-03:00  INFO 9120 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@376b0b0e
+2024-07-30T10:52:28.778-03:00  INFO 9120 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-07-30T10:52:28.778-03:00  WARN 9120 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-07-30T10:52:28.778-03:00  WARN 9120 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-30T10:52:28.844-03:00  INFO 9120 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-30T10:52:29.942-03:00  INFO 9120 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-30T10:52:30.041-03:00  WARN 9120 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-30T10:52:30.048-03:00  INFO 9120 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-30T10:52:30.049-03:00  WARN 9120 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-30T10:52:30.176-03:00  INFO 9120 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-30T10:52:30.190-03:00  INFO 9120 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-30T10:52:30.198-03:00  INFO 9120 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 1.852 seconds (process running for 715.541)
+2024-07-30T10:52:30.200-03:00  INFO 9120 --- [store] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-07-30T10:52:36.721-03:00  INFO 9120 --- [store] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 18 class path changes (0 additions, 0 deletions, 18 modifications)
+2024-07-30T10:52:36.721-03:00  INFO 9120 --- [store] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-30T10:52:36.721-03:00  INFO 9120 --- [store] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-07-30T10:52:36.730-03:00  INFO 9120 --- [store] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-07-30T10:52:36.793-03:00  INFO 9120 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 9120 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
+2024-07-30T10:52:36.793-03:00  INFO 9120 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-30T10:52:36.982-03:00  INFO 9120 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-30T10:52:36.998-03:00  INFO 9120 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 2 JPA repository interfaces.
+2024-07-30T10:52:37.099-03:00  INFO 9120 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-30T10:52:37.099-03:00  INFO 9120 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-30T10:52:37.099-03:00  INFO 9120 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-30T10:52:37.115-03:00  INFO 9120 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-30T10:52:37.115-03:00  INFO 9120 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 322 ms
+2024-07-30T10:52:37.182-03:00  INFO 9120 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-30T10:52:37.182-03:00  INFO 9120 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-30T10:52:37.182-03:00  INFO 9120 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-30T10:52:37.182-03:00  INFO 9120 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-07-30T10:52:37.198-03:00  INFO 9120 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79b85a0e
+2024-07-30T10:52:37.198-03:00  INFO 9120 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-07-30T10:52:37.198-03:00  WARN 9120 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-07-30T10:52:37.198-03:00  WARN 9120 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-30T10:52:37.264-03:00  INFO 9120 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-30T10:52:38.411-03:00  INFO 9120 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-30T10:52:38.484-03:00  WARN 9120 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-30T10:52:38.484-03:00  INFO 9120 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-30T10:52:38.493-03:00  WARN 9120 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-30T10:52:38.612-03:00  INFO 9120 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-30T10:52:38.625-03:00  INFO 9120 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-30T10:52:38.631-03:00  INFO 9120 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 1.87 seconds (process running for 723.974)
+2024-07-30T10:52:38.633-03:00  INFO 9120 --- [store] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

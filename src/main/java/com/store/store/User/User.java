@@ -1,0 +1,60 @@
+package com.store.store.User;
+
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "user_store")
+@Entity
+public class User implements UserDetails {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private Long userId;
+    @Column(unique = true, nullable = false)
+    private String userName;
+    private String email;
+    private String password;
+    @Enumerated(EnumType.STRING)
+    private Role role;
+    private boolean isEnabled;
+    private boolean accountNoExpired;
+    private boolean accountNoLocked;
+    private boolean credentialNoExpired;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority((role.name())));
+    }
+
+    @Override
+    public String getUsername() {
+        return this.userName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    
+
+}

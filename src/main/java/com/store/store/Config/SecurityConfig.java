@@ -1,36 +1,39 @@
 package com.store.store.Config;
 
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.AuthenticationManager;
+
 import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+
 import org.springframework.security.config.Customizer;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.SecurityFilterChain;
 
-import com.store.store.Entities.Users.UserDetailsServiceImpl;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+
+import com.store.store.Jwt.JwtAuthenticationFilter;
+
+
+import lombok.RequiredArgsConstructor;
 
 
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
-    private final UserDetailsServiceImpl userDetailsServiceImpl;
 
-    public SecurityConfig(UserDetailsServiceImpl userDetailsServiceImpl) {
-    this.userDetailsServiceImpl = userDetailsServiceImpl;
-    }
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private final AuthenticationProvider authProvider;
 
-    //all filters modified HttpSecurity Object
    
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity
@@ -41,6 +44,8 @@ public class SecurityConfig {
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Uso de sesiones sin estado
         .authorizeHttpRequests(http -> {
             // Configurar endpoints públicos
+           // http.requestMatchers(HttpMethod.GET, "/auth/**").permitAll();
+            http.requestMatchers("/auth/**").permitAll();
             http.requestMatchers(HttpMethod.GET, "/users/", "/users").permitAll();
             http.requestMatchers(HttpMethod.POST, "/users/exists", "/users/exists/").permitAll();
             http.requestMatchers(HttpMethod.POST, "/users/add", "/users/add/").permitAll();
@@ -78,28 +83,12 @@ public class SecurityConfig {
             // Denegar el resto
             http.anyRequest().denyAll();
         })
+        .authenticationProvider(authProvider)
+        .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
         .build();
     }
 
-   
 
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
-    }
-
-    @Bean
-    public AuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setPasswordEncoder(this.passwordEncoder());
-        provider.setUserDetailsService(userDetailsServiceImpl);
-        return provider;
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 
 
 

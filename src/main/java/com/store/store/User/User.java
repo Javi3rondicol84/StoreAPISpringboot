@@ -31,7 +31,7 @@ public class User implements UserDetails {
     @Id
     private Long userId;
     @Column(unique = true, nullable = false)
-    private String userName;
+    private String username;
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
@@ -48,7 +48,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return this.userName;
+        return this.username;
     }
 
 

@@ -3713,3 +3713,32 @@ java.sql.SQLException: Field 'username' doesn't have a default value
 2024-07-31T15:59:23.184-03:00  INFO 18136 --- [store] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-07-31T15:59:23.184-03:00  INFO 18136 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-07-31T15:59:23.184-03:00  INFO 18136 --- [store] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-07-31T16:04:27.271-03:00  INFO 18488 --- [store] [restartedMain] com.store.store.StoreApplication         : Starting StoreApplication using Java 22.0.1 with PID 18488 (C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store\target\classes started by javie in C:\Users\javie\OneDrive\Escritorio\Java SpringBoot\proyectoSpringboot\store)
+2024-07-31T16:04:27.271-03:00  INFO 18488 --- [store] [restartedMain] com.store.store.StoreApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-07-31T16:04:27.337-03:00  INFO 18488 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-31T16:04:27.338-03:00  INFO 18488 --- [store] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-31T16:04:28.174-03:00  INFO 18488 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-31T16:04:28.305-03:00  INFO 18488 --- [store] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 2 JPA repository interfaces.
+2024-07-31T16:04:29.177-03:00  INFO 18488 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-31T16:04:29.205-03:00  INFO 18488 --- [store] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-31T16:04:29.205-03:00  INFO 18488 --- [store] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-31T16:04:29.269-03:00  INFO 18488 --- [store] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-31T16:04:29.270-03:00  INFO 18488 --- [store] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1932 ms
+2024-07-31T16:04:29.450-03:00  INFO 18488 --- [store] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-31T16:04:29.522-03:00  INFO 18488 --- [store] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-31T16:04:29.585-03:00  INFO 18488 --- [store] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-31T16:04:29.846-03:00  INFO 18488 --- [store] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-31T16:04:29.889-03:00  INFO 18488 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-31T16:04:30.050-03:00  INFO 18488 --- [store] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c2454be
+2024-07-31T16:04:30.050-03:00  INFO 18488 --- [store] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-31T16:04:30.086-03:00  WARN 18488 --- [store] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'where clause'
+2024-07-31T16:04:30.103-03:00  WARN 18488 --- [store] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-31T16:04:30.757-03:00  INFO 18488 --- [store] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-31T16:04:31.249-03:00  INFO 18488 --- [store] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-31T16:04:31.725-03:00  INFO 18488 --- [store] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-31T16:04:31.733-03:00  WARN 18488 --- [store] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-31T16:04:31.770-03:00  INFO 18488 --- [store] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-31T16:04:31.836-03:00  WARN 18488 --- [store] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-31T16:04:32.444-03:00  INFO 18488 --- [store] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-31T16:04:32.489-03:00  INFO 18488 --- [store] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-31T16:04:32.506-03:00  INFO 18488 --- [store] [restartedMain] com.store.store.StoreApplication         : Started StoreApplication in 5.754 seconds (process running for 6.167)

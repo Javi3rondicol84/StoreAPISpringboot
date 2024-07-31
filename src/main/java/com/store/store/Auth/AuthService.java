@@ -26,7 +26,7 @@ public class AuthService {
 
     public AuthResponse login(LoginRequest request) {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
-        UserDetails user = userRepository.findUserEntityByUserName(request.getUsername()).orElseThrow();
+        UserDetails user = userRepository.findUserEntityByUsername(request.getUsername()).orElseThrow();
         if(user != null) {
             System.out.println("xd");
         }
@@ -43,7 +43,7 @@ public class AuthService {
 
     public AuthResponse register(RegisterRequest request) {
           User user = User.builder()
-        .userName(request.getUserName())
+        .username(request.getUsername())
         .email(request.getEmail())
         .password(passwordEncoder.encode(request.getPassword()))
         .role(Role.USER)

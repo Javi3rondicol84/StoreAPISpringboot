@@ -1,5 +1,7 @@
 package com.store.store.Auth;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.store.store.Jwt.JwtService;
@@ -13,6 +15,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AuthService {
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
     private final JwtService jwtService;
 
@@ -24,10 +28,11 @@ public class AuthService {
           User user = User.builder()
         .userName(request.getUserName())
         .email(request.getEmail())
-        .password(request.getPassword())
+        .password(passwordEncoder.encode(request.getPassword()))
         .role(Role.USER)
         .build();
 
+        System.out.println(request.getPassword());
         userRepository.save(user);
 
         return AuthResponse.builder()

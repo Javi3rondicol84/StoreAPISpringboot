@@ -34,7 +34,7 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final AuthenticationProvider authProvider;
 
-   
+   /* 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity
     )  throws Exception {
@@ -70,7 +70,7 @@ public class SecurityConfig {
             // Configurar endpoints privados
             // Productos
            
-            http.requestMatchers(HttpMethod.GET, "/products/{id}").hasAnyRole("ADMIN");
+            http.requestMatchers(HttpMethod.GET, "/products/{id}").hasAnyRole("USER");
             http.requestMatchers(HttpMethod.GET, "/products/filterByCategory").hasAnyRole("ADMIN");
             http.requestMatchers(HttpMethod.GET, "/products/filterByPrice").hasAnyRole("ADMIN");
             http.requestMatchers(HttpMethod.POST, "/products/add", "/products/add/").hasAnyRole("ADMIN");
@@ -87,7 +87,29 @@ public class SecurityConfig {
         .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
         .build();
     }
+*/
 
+@Bean
+public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception
+{
+    return http
+        .csrf(csrf -> 
+            csrf
+            .disable())
+        .authorizeHttpRequests(authRequest ->
+          authRequest
+            .requestMatchers("/auth/**").permitAll()
+            .anyRequest().authenticated()
+            )
+        .sessionManagement(sessionManager->
+            sessionManager 
+              .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        .authenticationProvider(authProvider)
+        .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+        .build();
+        
+        
+}
 
 
 

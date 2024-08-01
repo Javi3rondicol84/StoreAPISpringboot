@@ -33,6 +33,14 @@ public class AuthService {
         else {
             System.out.println("sssssss");
         }
+
+        if(this.passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+            System.out.println("matchea");
+        }
+        else {
+            System.out.println("no matchea");
+        }
+
         String token = jwtService.getToken(user);
         System.out.println("login"+request.getPassword());
         System.out.println("login"+user.getPassword());

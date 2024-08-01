@@ -1,12 +1,11 @@
 package com.store.store.Auth;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data 
+@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

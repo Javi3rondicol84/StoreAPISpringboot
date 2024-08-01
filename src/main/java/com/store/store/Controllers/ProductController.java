@@ -27,24 +27,23 @@ public class ProductController {
         this.httpHelper = new HttpHelper();
     }
 
-    
-    @GetMapping(value = {"/products/", "/products"})
+    @GetMapping(value = { "/products/", "/products" })
     public ResponseEntity<?> getAllProducts() {
         List<ProductEntity> products = this.productRepository.findAll();
 
         return this.httpHelper.getAllItemsResponse(products);
     }
 
-     @GetMapping("/products/{id}")
+    @GetMapping("/products/{id}")
     public ResponseEntity<?> getProductById(@PathVariable Long id) {
         ProductEntity product = this.productRepository.findById(id).orElse(null);
 
         return this.httpHelper.getItemByIdResponse(product, id);
     }
 
-    @PostMapping(value = {"/products/add", "/products/add/"})
+    @PostMapping(value = { "/products/add", "/products/add/" })
     public ResponseEntity<?> createProduct(@RequestBody ProductEntity product) {
-        if(product != null) {
+        if (product != null) {
             this.productRepository.save(product);
         }
 
@@ -55,8 +54,8 @@ public class ProductController {
     public ResponseEntity<?> updateUpdate(@RequestBody ProductEntity newProduct, @PathVariable Long id) {
 
         ProductEntity oldProduct = this.productRepository.findById(id).orElse(null);
-        
-        if(oldProduct != null) {
+
+        if (oldProduct != null) {
             oldProduct.setProductName(newProduct.getProductName());
             oldProduct.setDescription(newProduct.getDescription());
             oldProduct.setCategory(newProduct.getCategory());
@@ -68,21 +67,21 @@ public class ProductController {
 
         return this.httpHelper.getPutResponse(oldProduct, id);
     }
-    
+
     @DeleteMapping("/products/delete/{id}")
     public ResponseEntity<?> deleteProduct(@PathVariable Long id) {
         ProductEntity product = this.productRepository.findById(id).orElse(null);
 
-        if(product != null) {
+        if (product != null) {
             this.productRepository.delete(product);
         }
 
         return this.httpHelper.getDeleteResponse(product, id);
     }
 
-    //filters
+    // filters
     @GetMapping("/products/filterByCategory")
-    //get by category
+    // get by category
     public ResponseEntity<?> getProductByCategory(@RequestParam String category) {
         List<ProductEntity> products = this.productRepository.findByCategory(category);
 
@@ -90,13 +89,14 @@ public class ProductController {
     }
 
     @GetMapping("/products/filterByCategoryLimit")
-    //get by category
+    // get by category
     public ResponseEntity<?> getProductByCategoryLimit(@RequestParam String category, @RequestParam int limit) {
         List<ProductEntity> products = this.productRepository.findByCategoryAndLimit(category, limit);
 
         return this.httpHelper.getItemsByCategoryResponse(products, category);
     }
-    //get by price
+
+    // get by price
     @GetMapping("/products/filterByPrice")
     public ResponseEntity<?> getProductByPrice(@RequestParam Double price) {
 
@@ -106,36 +106,33 @@ public class ProductController {
 
     }
 
-   //get by limit
-   @GetMapping("/products/limit")
-   public ResponseEntity<?> getProductsByLimit(@RequestParam Integer limitValue) {
-       List<ProductEntity> products = this.productRepository.findByLimit(limitValue);
-       return this.httpHelper.getItemByLimitResponse(products, limitValue);
-   }
+    // get by limit
+    @GetMapping("/products/limit")
+    public ResponseEntity<?> getProductsByLimit(@RequestParam Integer limitValue) {
+        List<ProductEntity> products = this.productRepository.findByLimit(limitValue);
+        return this.httpHelper.getItemByLimitResponse(products, limitValue);
+    }
 
-     //get by categories
-     @GetMapping("/products/categories/")
-     public ResponseEntity<?> getAllCategories() {
-         List<String> products = this.productRepository.findAllCategories();
-         return this.httpHelper.getAllCategoriesResponse(products);
-     }
+    // get by categories
+    @GetMapping("/products/categories/")
+    public ResponseEntity<?> getAllCategories() {
+        List<String> products = this.productRepository.findAllCategories();
+        return this.httpHelper.getAllCategoriesResponse(products);
+    }
 
-    //get by category endpoint: http://localhost:8080/products/category?category=electronica
+    // get by category endpoint:
+    // http://localhost:8080/products/category?category=electronica
     @GetMapping("/products/category")
     public ResponseEntity<?> getByCategory(@RequestParam String category) {
         List<ProductEntity> products = this.productRepository.findByCategory(category);
         return this.httpHelper.getByCategoryResponse(products, category);
     }
-     
 
-          //get by keyword
-     @GetMapping("/products/search")  //http://localhost:8080/products/search?keyword=product example endpoint
-     public ResponseEntity<?> getProductByProductName(@RequestParam String keyword) {
-         List<ProductEntity> products = this.productRepository.findByProductName(keyword);
- 
-         return this.httpHelper.getItemsByKeyWordResponse(products, keyword);
-     }
-
-
+    // get by keyword
+    @GetMapping("/products/search") // http://localhost:8080/products/search?keyword=product example endpoint
+    public ResponseEntity<?> getProductByProductName(@RequestParam String keyword) {
+        List<ProductEntity> products = this.productRepository.findByProductName(keyword);
+        return this.httpHelper.getItemsByKeyWordResponse(products, keyword);
+    }
 
 }

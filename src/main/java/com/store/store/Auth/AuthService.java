@@ -48,4 +48,8 @@ public class AuthService {
 
     }
 
+    public AuthResponse closeSession() {
+        return null;
+    }
+
 }

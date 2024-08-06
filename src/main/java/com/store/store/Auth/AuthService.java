@@ -47,9 +47,5 @@ public class AuthService {
                 .build();
 
     }
-
-    public AuthResponse closeSession() {
-        return null;
-    }
-
+    
 }

@@ -27,4 +27,8 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
 
     @Query(value = "SELECT * FROM product WHERE product_name LIKE %:keyword%", nativeQuery = true)
     List<ProductEntity> findByProductName(@Param("keyword") String keyword);
+
+    @Query(value = "SELECT * FROM product WHERE category = ?1 ORDER BY product_id LIMIT ?2 OFFSET ?3", nativeQuery = true)
+    List<ProductEntity> findProductsPaginated(String category, Long limit, Long offset);
+  
 }

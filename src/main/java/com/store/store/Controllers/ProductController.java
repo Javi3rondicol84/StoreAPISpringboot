@@ -135,4 +135,12 @@ public class ProductController {
         return this.httpHelper.getItemsByKeyWordResponse(products, keyword);
     }
 
+    //get by category pagination
+    @GetMapping("/products/filterByCategoryPagination")
+    public ResponseEntity<?> getProductsPaginated(@RequestParam String category, @RequestParam Long limit, @RequestParam Long offset) {
+        List<ProductEntity> products = this.productRepository.findProductsPaginated(category, limit, offset);
+
+        return ResponseEntity.ok(products);
+    }
+
 }

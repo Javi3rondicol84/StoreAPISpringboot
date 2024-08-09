@@ -47,5 +47,16 @@ public class AuthService {
                 .build();
 
     }
+
+    public Long getUserId(String username) {
+
+        User user =  this.userRepository.findUserEntityByUsername(username).orElseThrow();
+
+        if(user != null) {
+           return user.getUserId();
+        }
+
+        return null;
+    }
     
 }

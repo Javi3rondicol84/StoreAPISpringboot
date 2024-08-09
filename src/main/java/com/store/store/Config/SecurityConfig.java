@@ -28,7 +28,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authRequest -> authRequest
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers("/products/**").permitAll()
-                        .requestMatchers("/cart/**").permitAll()
+                        //.requestMatchers("/cart/**").permitAll()
+                        .requestMatchers("/auth/getUserId/{username}").authenticated()
                         .anyRequest().authenticated())
                 .sessionManagement(sessionManager -> sessionManager
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))

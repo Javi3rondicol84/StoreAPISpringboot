@@ -31,4 +31,6 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
     @Query(value = "SELECT * FROM product WHERE category = ?1 ORDER BY product_id LIMIT ?2 OFFSET ?3", nativeQuery = true)
     List<ProductEntity> findProductsPaginated(String category, Long limit, Long offset);
   
+    @Query(value = "SELECT p.* FROM product p INNER JOIN cart c ON c.product_id = p.product_id WHERE user_id = ?1", nativeQuery = true)
+    List<ProductEntity> getAllProductsFromUser(Long userId);
 }

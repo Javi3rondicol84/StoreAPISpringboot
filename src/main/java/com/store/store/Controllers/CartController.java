@@ -51,9 +51,25 @@ public class CartController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("error, no se encontró el carrito con el id: "+id);
     } 
 
+    @GetMapping("/cart/products/{userId}")
+    public ResponseEntity<?> getAllProductsOfUser(@PathVariable Long userId) {
+        List<ProductEntity> products = this.productRepository.getAllProductsFromUser(userId);
+        if(products != null) {
+
+            return ResponseEntity.ok(products);
+        }
+        
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("no hay productos asignados al usuario de id: "+userId);
+    }
+
     @PostMapping("/cart/add")
     public ResponseEntity<?> addCart(@RequestBody CartEntity cartEntity) {
         if (cartEntity != null) {
+
+            //add increment amount if someone add the same product more than once
+//s.cartRepository.existsProductInUserCart(cartEntity.getProduct().getProductId(), cartEntity.getUser().getUserId()));
+
+
             Long productId = cartEntity.getProduct().getProductId();
             Long userId = cartEntity.getUser().getUserId();
 

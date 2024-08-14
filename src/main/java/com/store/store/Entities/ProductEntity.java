@@ -18,6 +18,7 @@ public class ProductEntity extends ItemEntity {
     private Double price;
     private int stock;
 
+
     public Long getProductId() {
         return productId;
     }

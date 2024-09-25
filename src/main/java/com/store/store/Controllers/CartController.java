@@ -51,7 +51,7 @@ public class CartController {
         }
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("error, no se encontró el carrito con el id: "+id);
-    } 
+    }
 
     @GetMapping("/cart/products/{userId}")
     public ResponseEntity<?> getAllProductsOfUser(@PathVariable Long userId) {

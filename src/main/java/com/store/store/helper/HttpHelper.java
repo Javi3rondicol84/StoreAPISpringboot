@@ -14,34 +14,33 @@ public class HttpHelper {
     public ResponseEntity<?> getAllItemsResponse(List<? extends ItemEntity> items) {
         if (items == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se pudo encontrar items");
-        } else {
-            return ResponseEntity.status(HttpStatus.OK).body(items);
         }
+
+        return ResponseEntity.status(HttpStatus.OK).body(items);
     }
 
     public ResponseEntity<?> getItemByIdResponse(ItemEntity item, Long id) {
         if (item == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontró el item con el id: " + id);
-        } else {
-            return ResponseEntity.status(HttpStatus.OK).body(item);
         }
+
+        return ResponseEntity.status(HttpStatus.OK).body(item);
     }
 
     public ResponseEntity<?> getItemByLimitResponse(List<? extends ItemEntity> items, Integer limit) {
         if (items == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontraron más de " + limit + " elementos");
-        } else {
-            return ResponseEntity.status(HttpStatus.OK).body(items);
         }
+
+        return ResponseEntity.status(HttpStatus.OK).body(items);
     }
 
     public ResponseEntity<?> getPostResponse(ItemEntity item) {
         if (item == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo añadir el nuevo item");
-        } else {
-            return ResponseEntity.status(HttpStatus.ACCEPTED).body("Item añadido correctamente");
         }
 
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body("Item añadido correctamente");
     }
 
     public ResponseEntity<?> getPutResponse(ItemEntity item, Long id) {

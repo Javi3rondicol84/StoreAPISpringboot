@@ -49,16 +49,24 @@ public class ProductController {
     }
 
     // filters
-    @GetMapping("/products/filterByCategory")
-    // get by category
-    public ResponseEntity<?> getProductByCategory(@RequestParam String category) {
-        return productService.getProductByCategory(category);
+
+    // get products by category endpoint:
+    // http://localhost:8080/products/category?category=electronica SE USA
+    @GetMapping("/products/category")
+    public ResponseEntity<?> getByCategory(@RequestParam String category) {
+        return productService.getByCategory(category);
     }
 
-    @GetMapping("/products/filterByCategoryLimit")
-    // get by category
-    public ResponseEntity<?> getProductByCategoryLimit(@RequestParam String category, @RequestParam int limit) {
-        return productService.getProductByCategoryLimit(category, limit);
+    // get by categories   //obtener todas las categorias
+    @GetMapping("/products/categories/")
+    public ResponseEntity<?> getAllCategories() {
+        return productService.getAllCategories();
+    }
+
+    //get by category pagination   //ESTE SE USA //obtener productos por x categoria con paginacion
+    @GetMapping("/products/filterByCategoryPagination")
+    public ResponseEntity<?> getProductsPaginated(@RequestParam String category, @RequestParam Long limit, @RequestParam Long offset) {
+        return productService.getProductsPaginated(category, limit, offset);
     }
 
     // get by price
@@ -73,29 +81,11 @@ public class ProductController {
         return productService.getProductsByLimit(limitValue);
     }
 
-    // get by categories
-    @GetMapping("/products/categories/")
-    public ResponseEntity<?> getAllCategories() {
-        return productService.getAllCategories();
-    }
-
-    // get by category endpoint:
-    // http://localhost:8080/products/category?category=electronica
-    @GetMapping("/products/category")
-    public ResponseEntity<?> getByCategory(@RequestParam String category) {
-        return productService.getByCategory(category);
-    }
-
     // get by keyword
     @GetMapping("/products/search") // http://localhost:8080/products/search?keyword=product example endpoint
     public ResponseEntity<?> getProductByProductName(@RequestParam String keyword) {
         return productService.getProductByProductName(keyword);
     }
 
-    //get by category pagination
-    @GetMapping("/products/filterByCategoryPagination")
-    public ResponseEntity<?> getProductsPaginated(@RequestParam String category, @RequestParam Long limit, @RequestParam Long offset) {
-        return productService.getProductsPaginated(category, limit, offset);
-    }
 
 }

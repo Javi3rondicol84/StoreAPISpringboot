@@ -1,6 +1,8 @@
 package com.store.store.config;
 
+import com.store.store.helper.GenericHttpHelper;
 import com.store.store.helper.HttpHelper;
+import com.store.store.helper.ProductHttpHelper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -20,8 +22,13 @@ public class ApplicationConfig {
     private final UserRepository userRepository;
 
     @Bean
-    public HttpHelper httpHelper() {
-        return new HttpHelper();
+    public GenericHttpHelper getGenericHttpHelper() {
+        return new GenericHttpHelper();
+    }
+
+    @Bean
+    public ProductHttpHelper getProductHttpHelper() {
+        return new ProductHttpHelper();
     }
 
     @Bean

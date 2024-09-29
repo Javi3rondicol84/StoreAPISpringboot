@@ -3,6 +3,7 @@ package com.store.store.service.impl;
 import com.store.store.entity.CartEntity;
 import com.store.store.entity.ProductCart;
 import com.store.store.entity.ProductEntity;
+import com.store.store.helper.GenericHttpHelper;
 import com.store.store.repository.CartRepository;
 import com.store.store.repository.ProductRepository;
 import com.store.store.service.CartService;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CartServiceImpl implements CartService {
@@ -24,23 +26,25 @@ public class CartServiceImpl implements CartService {
     private ProductRepository productRepository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private GenericHttpHelper<CartEntity> cartGenericHttpHelper;
+
+    //ERROR Usuario en carrito deja de funcionar, ocurre cuando por error
+    // un usuario tiene el mismo producto 2 veces. REVISAR AÑADIR PRODUCTO A CARRITO DE USUARIO
+
 
     @Override
     public ResponseEntity<?> getAllCarts() {
         List<CartEntity> carts = this.cartRepository.findAll();
 
-        return ResponseEntity.ok(carts);
+        return cartGenericHttpHelper.getAllItemsResponse(carts, "carritos");
     }
 
     @Override
     public ResponseEntity<?> getCartById(Long id) {
-        CartEntity cart = this.cartRepository.findById(id).orElseThrow();
+        Optional<CartEntity> cart = this.cartRepository.findById(id);
 
-        if(cart != null) {
-            return ResponseEntity.ok(cart);
-        }
-
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("error, no se encontró el carrito con el id: "+id);
+        return cartGenericHttpHelper.getItemByIdResponse(cart, id, "carrito");
     }
 
     @Override

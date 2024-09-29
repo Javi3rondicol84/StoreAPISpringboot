@@ -1,7 +1,6 @@
 package com.store.store.config;
 
 import com.store.store.helper.GenericHttpHelper;
-import com.store.store.helper.HttpHelper;
 import com.store.store.helper.ProductHttpHelper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

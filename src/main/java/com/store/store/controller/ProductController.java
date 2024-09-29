@@ -1,7 +1,5 @@
 package com.store.store.controller;
 
-import java.util.List;
-
 import com.store.store.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.store.store.entity.ProductEntity;
-import com.store.store.helper.HttpHelper;
-import com.store.store.repository.ProductRepository;
 
 @RestController
 public class ProductController {

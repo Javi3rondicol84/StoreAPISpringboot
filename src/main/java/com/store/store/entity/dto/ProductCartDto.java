@@ -1,17 +1,19 @@
-package com.store.store.entity;
+package com.store.store.entity.dto;
 
-public class ProductCart {
+import com.store.store.entity.ProductEntity;
+
+public class ProductCartDto {
     private ProductEntity product;
     private Long amount;
     private Long cartId;
 
-    public ProductCart(ProductEntity product, Long amount, Long cartId) {
+    public ProductCartDto(ProductEntity product, Long amount, Long cartId) {
         this.product = product;
         this.amount = amount;
         this.cartId = cartId;
     }
 
-    public ProductCart(ProductEntity product, Long amount) {
+    public ProductCartDto(ProductEntity product, Long amount) {
         this.product = product;
         this.amount = amount;
     }

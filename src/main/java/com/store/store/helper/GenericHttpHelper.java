@@ -1,6 +1,4 @@
 package com.store.store.helper;
-
-import com.store.store.entity.ItemEntity;
 import com.store.store.entity.ProductEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +26,7 @@ public class GenericHttpHelper<T> {
         return ResponseEntity.status(HttpStatus.OK).body(item.get());
     }
 
-    public ResponseEntity<?> getPostResponse(ItemEntity item, String entityName) {
+    public ResponseEntity<?> getPostResponse(T item, String entityName) {
         if (item == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body("No se pudo añadir el nuevo "+entityName);
@@ -57,7 +55,7 @@ public class GenericHttpHelper<T> {
                     .body("El item con el id: " + id + " se eliminó correctamente");
     }
 
-    public ResponseEntity<?> getItemsByLimitResponse(List<ProductEntity> items, Integer limit, String entityName) {
+    public ResponseEntity<?> getItemsByLimitResponse(List<T> items, Integer limit, String entityName) {
         if (items.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontraron más de " + limit + " " + entityName);
         }

@@ -2,7 +2,6 @@ package com.store.store.service.impl;
 
 import com.store.store.entity.ProductEntity;
 import com.store.store.helper.GenericHttpHelper;
-import com.store.store.helper.HttpHelper;
 import com.store.store.helper.ProductHttpHelper;
 import com.store.store.repository.ProductRepository;
 import com.store.store.service.ProductService;

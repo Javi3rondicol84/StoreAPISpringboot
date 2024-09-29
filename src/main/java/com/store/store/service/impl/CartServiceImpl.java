@@ -1,7 +1,7 @@
 package com.store.store.service.impl;
 
 import com.store.store.entity.CartEntity;
-import com.store.store.entity.ProductCart;
+import com.store.store.entity.dto.ProductCartDto;
 import com.store.store.entity.ProductEntity;
 import com.store.store.helper.GenericHttpHelper;
 import com.store.store.repository.CartRepository;
@@ -14,7 +14,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,31 +48,14 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public ResponseEntity<?> getAllProductsOfUser(Long userId) {
-        List<ProductEntity> products = this.productRepository.getAllProductsFromUser(userId);
+        List<ProductCartDto> productsCart = this.cartRepository.getAllProductsFromUser(userId);
 
-        List<ProductCart> productsCart = new ArrayList<>();
+        if(productsCart.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("no hay productos asignados al usuario de id: "+userId);
 
-        if(products != null) {
-
-            for(ProductEntity product : products) {
-                Long amount = this.getAmountFromProductOfUser(userId, product.getProductId());
-
-                Long cartId = this.getCartId(userId, product.getProductId());
-
-                if(amount != null && cartId != null) {
-                    ProductCart productCart = new ProductCart(product, amount, cartId);
-                    productsCart.add(productCart);
-                }
-                else {
-                    return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontró el valor de cantidad del userId: "+userId+", y el productId: "+product.getProductId());
-                }
-
-            }
-
-            return ResponseEntity.ok(productsCart);
         }
 
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("no hay productos asignados al usuario de id: "+userId);
+        return ResponseEntity.ok(productsCart);
     }
 
     @Override

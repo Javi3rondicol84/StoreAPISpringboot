@@ -10,7 +10,7 @@ public interface ProductService {
     ResponseEntity<?> getAllProducts();
     ResponseEntity<?> getProductById(@PathVariable Long id);
     ResponseEntity<?> createProduct(@RequestBody ProductEntity product);
-    ResponseEntity<?> updateUpdate(@RequestBody ProductEntity newProduct, @PathVariable Long id);
+    ResponseEntity<?> updateProduct(@RequestBody ProductEntity newProduct, @PathVariable Long id);
     ResponseEntity<?> deleteProduct(@PathVariable Long id);
     ResponseEntity<?> getProductsByCategory(@RequestParam String category);
     ResponseEntity<?> getProductsByCategoryLimit(@RequestParam String category, @RequestParam int limit);

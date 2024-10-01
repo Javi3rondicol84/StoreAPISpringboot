@@ -51,7 +51,7 @@ public class CartController {
         return cartService.addCart(cartEntity);
     }
 
-    @PutMapping("cart/update/{id}")
+   @PutMapping("cart/update/{id}")
     public ResponseEntity<?> updateCart(@PathVariable Long id, @RequestBody CartEntity newCart) {
         return cartService.updateCart(id, newCart);
     }

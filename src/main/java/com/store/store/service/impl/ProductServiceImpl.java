@@ -47,7 +47,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ResponseEntity<?> updateUpdate(ProductEntity newProduct, Long id) {
+    public ResponseEntity<?> updateProduct(ProductEntity newProduct, Long id) {
         Optional<ProductEntity> oldProduct = this.productRepository.findById(id);
 
         if (oldProduct.isPresent()) {

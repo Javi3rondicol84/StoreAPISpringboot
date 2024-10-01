@@ -60,15 +60,22 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public ResponseEntity<?> updateAmountProduct(Long amount, Long cartId) {
-        CartEntity cart = this.cartRepository.findById(cartId).orElseThrow();
-        if(cart != null) {
-            cart.setAmount(amount);
-            this.cartRepository.save(cart);
-            return ResponseEntity.ok(cart);
-        }
+        Optional<CartEntity> cart = this.cartRepository.findById(cartId);
 
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("actualizacion de cantidad fallida bajo el id: "+cartId);
+        if(!cart.isPresent()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("no existe un carrito bajo el id: "+cartId);
+        }
+        else if(amount <= 0) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("cantidad invalida");
+        }
+        else {
+            CartEntity cartEntity = cart.get();
+            cartEntity.setAmount(amount);
+            this.cartRepository.save(cartEntity);
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(cartEntity);
+        }
     }
+
 
     @Override
     public Long getAmountFromProductOfUser(Long userId, Long productId) {
@@ -86,72 +93,65 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public ResponseEntity<?> addCart(CartEntity cartEntity) {
-        if (cartEntity != null) {
-            if(getAmountFromProductOfUser(cartEntity.getUser().getUserId(), cartEntity.getProduct().getProductId()) != null) {
-                Long cartId = this.getCartId(cartEntity.getUser().getUserId(), cartEntity.getProduct().getProductId());
 
-                Long newAmount = (this.getAmountFromProductOfUser(cartEntity.getUser().getUserId(), cartEntity.getProduct().getProductId())) + 1;
-
-                return this.updateAmountProduct(newAmount, cartId);
-            }
-
-            Long productId = cartEntity.getProduct().getProductId();
-            Long userId = cartEntity.getUser().getUserId();
-
-            ProductEntity product = this.productRepository.findById(productId).orElseThrow();
-
-            User user = this.userRepository.findById(userId).orElseThrow();
-
-            if(product != null) {
-                cartEntity.setProduct(product);
-            }
-
-            if(user != null) {
-                cartEntity.setUser(user);
-            }
-
-            this.cartRepository.save(cartEntity);
-            return ResponseEntity.ok(cartEntity);
+        if(cartEntity == null || cartEntity.getProduct() == null || cartEntity.getUser() == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("carrito incompleto, fallido");
         }
 
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("error al añadir el carrito");
+        Long cartId = this.cartRepository.getCartId(cartEntity.getUser().getUserId(), cartEntity.getProduct().getProductId());
+
+        if(cartId == null) {
+            this.cartRepository.save(cartEntity);
+            return ResponseEntity.status(HttpStatus.CREATED).body(cartEntity);
+        }
+
+        CartEntity cartUpdated = this.cartRepository.findById(cartId).get();
+
+        cartUpdated.setAmount(cartUpdated.getAmount() + cartEntity.getAmount());
+
+        this.cartRepository.save(cartUpdated);
+
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(cartUpdated);
     }
 
     @Override
     public ResponseEntity<?> updateCart(Long id, CartEntity newCart) {
-        CartEntity oldCart = this.cartRepository.findById(id).orElseThrow();
+        Optional<CartEntity> oldCart = this.cartRepository.findById(id);
 
-        if (oldCart != null) {
-
-            Long productId = newCart.getProduct().getProductId();
-            Long userId = newCart.getUser().getUserId();
-
-            ProductEntity product = this.productRepository.findById(productId).orElseThrow();
-
-            User user = this.userRepository.findById(userId).orElseThrow();
-
-            oldCart.setAmount(newCart.getAmount());
-            oldCart.setCreatedAt(newCart.getCreatedAt());
-            oldCart.setUpdatedAt(newCart.getUpdatedAt());
-            oldCart.setProduct(product);
-            oldCart.setUser(user);
-
-            this.cartRepository.save(oldCart);
-            return ResponseEntity.ok(oldCart);
+        if(!oldCart.isPresent()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("error al actualizar el carrito");
         }
 
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("error al actualizar el carrito");
+        if(newCart == null || newCart.getProduct() == null || newCart.getUser() == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("carrito incompleto, fallido");
+        }
+
+        CartEntity cartEntity = oldCart.get();
+
+        System.out.println(cartEntity);
+
+        ProductEntity product = this.productRepository.findById(newCart.getProduct().getProductId()).get();
+        User user = this.userRepository.findById(newCart.getUser().getUserId()).get();
+
+        cartEntity.setAmount(newCart.getAmount());
+        cartEntity.setCreatedAt(cartEntity.getCreatedAt());
+        cartEntity.setUpdatedAt(newCart.getUpdatedAt());
+        cartEntity.setProduct(product);
+        cartEntity.setUser(user);
+
+        this.cartRepository.save(cartEntity);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(cartEntity);
     }
 
     @Override
     public ResponseEntity<?> deleteCart(Long id) {
-        CartEntity cartToDelete = this.cartRepository.findById(id).orElseThrow();
+        Optional<CartEntity> cartToDelete = this.cartRepository.findById(id);
 
-        if(cartToDelete != null) {
-            this.cartRepository.delete(cartToDelete);
-            return ResponseEntity.ok(cartToDelete);
+        if(!cartToDelete.isPresent()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo eliminar el carrito con el id: "+id);
         }
 
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se pudo eliminar el carrito con el id: "+id);
+        this.cartRepository.delete(cartToDelete.get());
+        return ResponseEntity.ok(cartToDelete);
     }
 }

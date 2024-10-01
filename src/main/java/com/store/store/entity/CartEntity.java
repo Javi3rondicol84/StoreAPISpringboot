@@ -4,20 +4,11 @@ import java.time.LocalDateTime;
 
 import com.store.store.user.User;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 
 @Entity 
-@Table(name = "cart")
+@Table(name = "cart", uniqueConstraints = { @UniqueConstraint(columnNames = { "user_id", "product_id" }) })
 public class CartEntity  {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -98,6 +89,15 @@ public class CartEntity  {
         this.updatedAt = updatedAt;
     }
 
-    
-
+    @Override
+    public String toString() {
+        return "CartEntity{" +
+                "cartId=" + cartId +
+                ", product=" + product +
+                ", user=" + user +
+                ", amount=" + amount +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

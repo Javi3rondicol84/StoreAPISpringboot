@@ -41,7 +41,8 @@ public class CartController {
         return cartService.getAmountFromProductOfUser(userId, productId);
     }
 
-    private Long getCartId(Long userId, Long productId) {
+    @GetMapping("cart/getCartIdFromUser/{userId}/{productId}")
+    private Long getCartId(@PathVariable Long userId, @PathVariable Long productId) {
         return cartService.getCartId(userId, productId);
     }
 

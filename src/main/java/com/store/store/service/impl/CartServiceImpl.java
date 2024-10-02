@@ -1,6 +1,7 @@
 package com.store.store.service.impl;
 
 import com.store.store.entity.CartEntity;
+import com.store.store.entity.dto.CartDto;
 import com.store.store.entity.dto.ProductCartDto;
 import com.store.store.entity.ProductEntity;
 import com.store.store.helper.GenericHttpHelper;
@@ -27,10 +28,6 @@ public class CartServiceImpl implements CartService {
     private UserRepository userRepository;
     @Autowired
     private GenericHttpHelper<CartEntity> cartGenericHttpHelper;
-
-    //ERROR Usuario en carrito deja de funcionar, ocurre cuando por error
-    // un usuario tiene el mismo producto 2 veces. REVISAR AÑADIR PRODUCTO A CARRITO DE USUARIO
-
 
     @Override
     public ResponseEntity<?> getAllCarts() {
@@ -86,36 +83,39 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public Long getCartId(Long userId, Long productId) {
-        Long cartId = this.cartRepository.getCartId(userId, productId);
+        Optional<User> user = this.userRepository.findById(userId);
+        Optional<ProductEntity> product = this.productRepository.findById(productId);
+        Long cartId = this.cartRepository.getCartId(user.get(), product.get());
 
         return cartId;
     }
 
     @Override
     public ResponseEntity<?> addCart(CartEntity cartEntity) {
-
         if(cartEntity == null || cartEntity.getProduct() == null || cartEntity.getUser() == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("carrito incompleto, fallido");
         }
 
-        Long cartId = this.cartRepository.getCartId(cartEntity.getUser().getUserId(), cartEntity.getProduct().getProductId());
+        Optional<User> user = this.userRepository.findById(cartEntity.getUser().getUserId());
+        Optional<ProductEntity> product = this.productRepository.findById(cartEntity.getProduct().getProductId());
+
+        Long cartId = this.cartRepository.getCartId(user.get(), product.get());
+
+        CartDto cart = this.cartRepository.getCartObjectById(cartId);//armar cart entity con todos los datos y objetos
 
         if(cartId == null) {
             this.cartRepository.save(cartEntity);
-            return ResponseEntity.status(HttpStatus.CREATED).body(cartEntity);
+            return ResponseEntity.status(HttpStatus.CREATED).body(cart);
+        }
+        else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("el producto ya se encuentra en el carrito");
         }
 
-        CartEntity cartUpdated = this.cartRepository.findById(cartId).get();
-
-        cartUpdated.setAmount(cartUpdated.getAmount() + cartEntity.getAmount());
-
-        this.cartRepository.save(cartUpdated);
-
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(cartUpdated);
     }
 
     @Override
     public ResponseEntity<?> updateCart(Long id, CartEntity newCart) {
+        CartDto cart = this.cartRepository.getCartObjectById(id);
         Optional<CartEntity> oldCart = this.cartRepository.findById(id);
 
         if(!oldCart.isPresent()) {
@@ -140,6 +140,7 @@ public class CartServiceImpl implements CartService {
         cartEntity.setUser(user);
 
         this.cartRepository.save(cartEntity);
+
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(cartEntity);
     }
 

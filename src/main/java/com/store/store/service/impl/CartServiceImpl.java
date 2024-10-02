@@ -27,18 +27,20 @@ public class CartServiceImpl implements CartService {
     @Autowired
     private UserRepository userRepository;
     @Autowired
-    private GenericHttpHelper<CartEntity> cartGenericHttpHelper;
+    private GenericHttpHelper<CartDto> cartGenericHttpHelper;
 
     @Override
     public ResponseEntity<?> getAllCarts() {
-        List<CartEntity> carts = this.cartRepository.findAll();
+        //traer lista de CartDto
+        List<CartDto> carts = this.cartRepository.getAll();
+        //List<CartEntity> carts = this.cartRepository.findAll();
 
         return cartGenericHttpHelper.getAllItemsResponse(carts, "carritos");
     }
 
     @Override
     public ResponseEntity<?> getCartById(Long id) {
-        Optional<CartEntity> cart = this.cartRepository.findById(id);
+        CartDto cart = this.cartRepository.getCartObjectById(id);
 
         return cartGenericHttpHelper.getItemByIdResponse(cart, id, "carrito");
     }
@@ -69,14 +71,17 @@ public class CartServiceImpl implements CartService {
             CartEntity cartEntity = cart.get();
             cartEntity.setAmount(amount);
             this.cartRepository.save(cartEntity);
-            return ResponseEntity.status(HttpStatus.ACCEPTED).body(cartEntity);
+            CartDto cartDto = new CartDto(cartEntity.getCartId(), cartEntity.getProduct(), cartEntity.getUser(), cartEntity.getAmount(), cartEntity.getCreatedAt(), cartEntity.getUpdatedAt());
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(cartDto);
         }
     }
 
-
     @Override
     public Long getAmountFromProductOfUser(Long userId, Long productId) {
-        Long amount = this.cartRepository.getAmountOfCart(userId, productId);
+        Optional<User> user = this.userRepository.findById(userId);
+        Optional<ProductEntity> product = this.productRepository.findById(productId);
+
+        Long amount = this.cartRepository.getAmountOfCart(user.get(), product.get());
 
         return amount;
     }
@@ -128,8 +133,6 @@ public class CartServiceImpl implements CartService {
 
         CartEntity cartEntity = oldCart.get();
 
-        System.out.println(cartEntity);
-
         ProductEntity product = this.productRepository.findById(newCart.getProduct().getProductId()).get();
         User user = this.userRepository.findById(newCart.getUser().getUserId()).get();
 
@@ -141,7 +144,9 @@ public class CartServiceImpl implements CartService {
 
         this.cartRepository.save(cartEntity);
 
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(cartEntity);
+        CartDto cartDto = new CartDto(cartEntity.getCartId(), cartEntity.getProduct(), cartEntity.getUser(), cartEntity.getAmount(), cartEntity.getCreatedAt(), cartEntity.getUpdatedAt());
+
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(cartDto);
     }
 
     @Override
@@ -153,6 +158,9 @@ public class CartServiceImpl implements CartService {
         }
 
         this.cartRepository.delete(cartToDelete.get());
+
+        CartDto cartDto = new CartDto(cartToDelete.get().getCartId(), cartToDelete.get().getProduct(), cartToDelete.get().getUser(), cartToDelete.get().getAmount(), cartToDelete.get().getCreatedAt(), cartToDelete.get().getUpdatedAt());
+
         return ResponseEntity.ok(cartToDelete);
     }
 }

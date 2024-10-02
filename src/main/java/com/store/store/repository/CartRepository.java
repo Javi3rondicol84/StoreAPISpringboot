@@ -14,14 +14,14 @@ import java.util.List;
 
 public interface CartRepository extends JpaRepository<CartEntity, Long>{
     
-    @Query(value = "SELECT amount FROM cart WHERE user_id = ?1 AND product_id = ?2", nativeQuery = true)
-    Long getAmountOfCart(Long userId, Long productId);
+    @Query(value = "SELECT c.amount FROM CartEntity c WHERE c.user = ?1 AND c.product = ?2")
+    Long getAmountOfCart(User user, ProductEntity product);
 
-   // @Query(value = "SELECT cart_id FROM cart WHERE user_id = ?1 AND product_id = ?2", nativeQuery = true)
-    //Long getCartId(Long userId, Long productId);
+    @Query("SELECT new com.store.store.entity.dto.CartDto(c.cartId, c.product, c.user, c.amount, c.createdAt, c.updatedAt) FROM CartEntity c")
+    List<CartDto> getAll();
 
     @Query("SELECT c.cartId FROM CartEntity c WHERE c.user = ?1 AND c.product = ?2")
-    Long getCartId(User userId, ProductEntity product);
+    Long getCartId(User user, ProductEntity product);
 
     @Query("SELECT new com.store.store.entity.dto.CartDto(c.cartId, c.product, c.user, c.amount, c.createdAt, c.updatedAt) FROM CartEntity c WHERE c.cartId = ?1")
     CartDto getCartObjectById(Long cartId);

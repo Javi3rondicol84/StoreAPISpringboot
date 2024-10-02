@@ -34,7 +34,7 @@ public class ProductServiceImpl implements ProductService {
     public ResponseEntity<?> getProductById(Long id) {
         Optional<ProductEntity> product = this.productRepository.findById(id);
 
-        return this.productHttpHelper.getItemByIdResponse(product, id, "producto");
+        return this.productHttpHelper.getItemByIdResponse(product.get(), id, "producto");
     }
 
     @Override

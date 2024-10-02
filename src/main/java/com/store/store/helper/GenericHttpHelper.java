@@ -17,13 +17,13 @@ public class GenericHttpHelper<T> {
         return ResponseEntity.status(HttpStatus.OK).body(items);
     }
 
-    public ResponseEntity<?> getItemByIdResponse(Optional<T> item, Long id, String entityName) {
-        if(!item.isPresent()) {
+    public ResponseEntity<?> getItemByIdResponse(T item, Long id, String entityName) {
+        if(item == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("No se encontró el "+entityName+" con el id: " + id);
         }
 
-        return ResponseEntity.status(HttpStatus.OK).body(item.get());
+        return ResponseEntity.status(HttpStatus.OK).body(item);
     }
 
     public ResponseEntity<?> getPostResponse(T item, String entityName) {

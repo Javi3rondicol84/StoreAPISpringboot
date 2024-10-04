@@ -1,6 +1,7 @@
 package com.store.store.service.impl;
 
 import com.store.store.entity.ProductEntity;
+import com.store.store.entity.dto.ProductDto;
 import com.store.store.helper.GenericHttpHelper;
 import com.store.store.helper.ProductHttpHelper;
 import com.store.store.repository.ProductRepository;
@@ -21,20 +22,27 @@ public class ProductServiceImpl implements ProductService {
     private ProductHttpHelper onlyProductHttpHelper;
 
     @Autowired
+    private GenericHttpHelper genericHttpHelper;
+
+    @Autowired
     private GenericHttpHelper<ProductEntity> productHttpHelper;
 
     @Override
     public ResponseEntity<?> getAllProducts() {
-        List<ProductEntity> products = this.productRepository.findAll();
+        List<ProductDto> products = this.productRepository.getAll();
 
-        return this.productHttpHelper.getAllItemsResponse(products, "productos");
+        return this.genericHttpHelper.getAllItemsResponse(products, "productos");
     }
 
     @Override
     public ResponseEntity<?> getProductById(Long id) {
         Optional<ProductEntity> product = this.productRepository.findById(id);
 
-        return this.productHttpHelper.getItemByIdResponse(product.get(), id, "producto");
+        ProductEntity p = product.get();
+
+        ProductDto productDto = new ProductDto(p.getProductId(), p.getProductName(), p.getDescription(), p.getCategory(), p.getPrice(), p.getStock());
+
+        return this.genericHttpHelper.getItemByIdResponse(productDto, id, "producto");
     }
 
     @Override
@@ -43,15 +51,18 @@ public class ProductServiceImpl implements ProductService {
             this.productRepository.save(product);
         }
 
-        return this.productHttpHelper.getPostResponse(product, "producto");
+        ProductDto productDto = new ProductDto(product.getProductId(), product.getProductName(), product.getDescription(), product.getCategory(), product.getPrice(), product.getStock());
+
+        return this.genericHttpHelper.getPostResponse(productDto, "producto");
     }
 
     @Override
     public ResponseEntity<?> updateProduct(ProductEntity newProduct, Long id) {
         Optional<ProductEntity> oldProduct = this.productRepository.findById(id);
 
+        ProductEntity product = oldProduct.get();
+
         if (oldProduct.isPresent()) {
-            ProductEntity product = oldProduct.get();
             product.setProductName(newProduct.getProductName());
             product.setDescription(newProduct.getDescription());
             product.setCategory(newProduct.getCategory());
@@ -61,7 +72,9 @@ public class ProductServiceImpl implements ProductService {
             this.productRepository.save(product);
         }
 
-        return this.productHttpHelper.getPutResponse(oldProduct, id, "producto");
+        ProductDto productDto = new ProductDto(product.getProductId(), product.getProductName(), product.getDescription(), product.getCategory(), product.getPrice(), product.getStock());
+
+        return this.genericHttpHelper.getPutResponse(productDto, id, "producto");
     }
 
     @Override
@@ -72,56 +85,29 @@ public class ProductServiceImpl implements ProductService {
             this.productRepository.delete(product.get());
         }
 
-        return this.productHttpHelper.getDeleteResponse(product, id, "producto");
+        ProductDto productDto = new ProductDto(product.get().getProductId(), product.get().getProductName(), product.get().getDescription(), product.get().getCategory(), product.get().getPrice(), product.get().getStock());
+
+        return this.genericHttpHelper.getDeleteResponse(productDto, id, "producto");
     }
 
     @Override
-    public ResponseEntity<?> getProductsByLimit(Integer limitValue) {
-        List<ProductEntity> products = this.productRepository.findByLimit(limitValue);
-
-        return this.productHttpHelper.getItemsByLimitResponse(products, limitValue, "productos");
-    }
-
-
-    @Override
-    public ResponseEntity<?> getProductsByCategory(String category) {
-        List<ProductEntity> products = this.productRepository.findByCategory(category);
-
-        return this.onlyProductHttpHelper.getProductsByCategoryResponse(products, category);
-    }
-
-    @Override
-    public ResponseEntity<?> getByCategory(String category) {
-        List<ProductEntity> products = this.productRepository.findByCategory(category);
+    public ResponseEntity<?> getByCategory(String category) {  //SE USA
+        List<ProductDto> products = this.productRepository.getByCategory(category);
 
         return this.onlyProductHttpHelper.getByCategoryResponse(products, category);
     }
 
 
     @Override
-    public ResponseEntity<?> getProductsByCategoryLimit(String category, int limit) {
-        List<ProductEntity> products = this.productRepository.findByCategoryAndLimit(category, limit);
-
-        return this.onlyProductHttpHelper.getProductsByCategoryResponse(products, category);
-    }
-
-    @Override
     public ResponseEntity<?> getAllCategories() {
-        List<String> products = this.productRepository.findAllCategories();
+        List<String> products = this.productRepository.getAllCategories();
 
         return this.onlyProductHttpHelper.getAllCategoriesResponse(products);
     }
 
     @Override
-    public ResponseEntity<?> getProductByPrice(Double price) {
-        List<ProductEntity> products = this.productRepository.findByPrice(price);
-
-        return this.onlyProductHttpHelper.getProductsByPriceResponse(products, price);
-    }
-
-    @Override
     public ResponseEntity<?> getProductByProductName(String keyword) {
-        List<ProductEntity> products = this.productRepository.findByProductName(keyword);
+        List<ProductDto> products = this.productRepository.getByProductName(keyword);
         return this.onlyProductHttpHelper.getProductsByProductNameResponse(products, keyword);
     }
 

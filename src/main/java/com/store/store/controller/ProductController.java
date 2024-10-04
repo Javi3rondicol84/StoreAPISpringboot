@@ -65,18 +65,6 @@ public class ProductController {
         return productService.getProductsPaginated(category, limit, offset);
     }
 
-    // get by price
-    @GetMapping("/products/filterByPrice")
-    public ResponseEntity<?> getProductByPrice(@RequestParam Double price) {
-        return productService.getProductByPrice(price);
-    }
-
-    // get by limit
-    @GetMapping("/products/limit")
-    public ResponseEntity<?> getProductsByLimit(@RequestParam Integer limitValue) {
-        return productService.getProductsByLimit(limitValue);
-    }
-
     // get by keyword
     @GetMapping("/products/search") // http://localhost:8080/products/search?keyword=product example endpoint
     public ResponseEntity<?> getProductByProductName(@RequestParam String keyword) {

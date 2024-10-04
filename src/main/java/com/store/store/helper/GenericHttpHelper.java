@@ -36,17 +36,17 @@ public class GenericHttpHelper<T> {
                 .body("Item añadido correctamente");
     }
 
-    public ResponseEntity<?> getPutResponse(Optional<T> item, Long id, String entityName) {
-        if(!item.isPresent()) {
+    public ResponseEntity<?> getPutResponse(T item, Long id, String entityName) {
+        if(item == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body("No se pudo actualizar el "+entityName+" con el id: " + id);
         }
 
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(item.get());
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(item);
     }
 
-    public ResponseEntity<?> getDeleteResponse(Optional<T> item, Long id, String entityName) {
-        if (!item.isPresent()) {
+    public ResponseEntity<?> getDeleteResponse(T item, Long id, String entityName) {
+        if (item == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body("No se pudo eliminar el "+entityName+" con el id: " + id);
         }

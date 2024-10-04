@@ -12,10 +12,6 @@ public interface ProductService {
     ResponseEntity<?> createProduct(@RequestBody ProductEntity product);
     ResponseEntity<?> updateProduct(@RequestBody ProductEntity newProduct, @PathVariable Long id);
     ResponseEntity<?> deleteProduct(@PathVariable Long id);
-    ResponseEntity<?> getProductsByCategory(@RequestParam String category);
-    ResponseEntity<?> getProductsByCategoryLimit(@RequestParam String category, @RequestParam int limit);
-    ResponseEntity<?> getProductByPrice(@RequestParam Double price);
-    ResponseEntity<?> getProductsByLimit(@RequestParam Integer limitValue);
     ResponseEntity<?> getAllCategories();
     ResponseEntity<?> getByCategory(@RequestParam String category);
     ResponseEntity<?> getProductByProductName(@RequestParam String keyword);
